@@ -494,7 +494,7 @@ TONE: Be friendly, professional, and concise. Always end responses by offering t
     showTyping();
 
     try {
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        const response = await fetch('/.netlify/functions/groq', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
