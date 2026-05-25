@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nautilus Code — Engineering Perfect Digital Architecture</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (for utility classes used inline) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: { DEFAULT: '#0B1426', 50: '#f0f3fa', 100: '#d8e0f0', 200: '#b0c1e1', 300: '#7a9acc', 400: '#3d6bb0', 500: '#1a4a8f', 600: '#0f3270', 700: '#0B1E4F', 800: '#0B1426', 900: '#060d1a' },
+            electric: { DEFAULT: '#2563EB', light: '#3b82f6', pale: '#eff6ff' },
+            slate: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 300: '#cbd5e1', 400: '#94a3b8', 500: '#64748b', 600: '#475569', 700: '#334155', 800: '#1e293b', 900: '#0f172a' }
+          },
+          fontFamily: { display: ['Syne', 'sans-serif'], body: ['DM Sans', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <!-- <script src="./config.js"></script> -->
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════════
+       NAVBAR  (shared across all pages)
+       Edit: components/navbar-footer.html for reference
+       ══════════════════════════════════════════════════════════ -->
+  <div id="navbar-placeholder"></div>
+
+
+  <div id="page-home" class="page active">
+    <div>
+
+      <section class="hero-section" style="padding-top:118px;">
+ 
+        <!-- Background Slideshow (full section) -->
+        <div class="hero-slideshow">
+          <div class="hero-slide active">
+            <img src="assets/brain.jpeg" alt="AI Intelligence">
+          </div>
+          <div class="hero-slide">
+            <img src="assets/comp.jpeg" alt="Analytics Platform">
+          </div>
+          <div class="hero-slide">
+            <img src="assets/robot.jpeg" alt="Automation">
+          </div>
+        </div>
+ 
+        <div class="hero-bg-overlay"></div>
+ 
+        <div class="hero-bg-grid"></div>
+        <div class="hero-bg-radial"></div>
+ 
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr;gap:80px;align-items:center;width:100%;position:relative;z-index:2;" class="hero-grid">
+          <div style="animation: fadeUp 0.7s ease forwards;">
+            <!-- Badge -->
+              <!-- <div class="hero-badge" style="animation:fadeUp 0.5s ease forwards;">
+                <span class="hero-badge-dot"></span>
+                <span>Available for new projects</span>
+              </div> -->
+            <!-- Headline — smaller, cleaner -->
+              <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2.2rem,4vw,2.7rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;color:var(--navy);max-width:720px;margin-top:20px;animation:fadeUp 0.6s ease forwards 0.1s;opacity:0;">
+                Automate Your <span style="color:var(--electric);">Operations.</span> Scale Without the Chaos.
+              </h1>
+ 
+              <!-- Description -->
+              <p style="font-size:1rem;line-height:1.8;color:var(--slate-500);max-width:560px;margin-top:20px;font-weight:400;animation:fadeUp 0.6s ease forwards 0.2s;opacity:0;">
+                We don't just build websites; we optimize your entire workflow. Nautilus Code engineers high-performance custom platforms, bespoke POS systems, and intelligent ecosystems tailored for growing enterprises.
+              </p>
+ 
+            <!-- Buttons -->
+            <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap;animation:fadeUp 0.6s ease forwards 0.3s;opacity:0;">
+              <button class="btn-primary" onclick="navigateTo('contact')">Optimize My Business →</button>
+              <button class="btn-secondary" onclick="navigateTo('services')">Explore Solutions</button>
+            </div>
+             <!-- Animated divider line -->
+            <div style="margin-top:60px;animation:fadeUp 0.6s ease forwards 0.4s;opacity:0;">
+              <div class="hero-scroll-line"></div>
+            </div>
+ 
+          </div>
+        </div>
+ 
+        <!-- Slide caption & dots (bottom of section, above overlay) -->
+        <div class="hero-slideshow-ui">
+          <div class="hero-slide-caption-bar">
+  
+          </div>
+          <div class="hero-slide-dots">
+            <button class="hero-dot active" onclick="goToSlide(0)"></button>
+            <button class="hero-dot" onclick="goToSlide(1)"></button>
+            <button class="hero-dot" onclick="goToSlide(2)"></button>
+          </div>
+        </div>
+ 
+      </section>
+
+      <!-- Stats card  -->
+      <div class="stats-card-wrapper">
+        <div class="stats-card">
+
+          <div class="stat-item" style="text-align:center;">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:white;letter-spacing:-0.04em;line-height:1;">
+              <span class="count" data-target="10">0</span><span style="color:var(--electric);">+</span>
+            </div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:6px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;">Projects Delivered</div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item" style="text-align:center;">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:white;letter-spacing:-0.04em;line-height:1;">
+              <span class="count" data-target="99">0</span><span style="color:var(--electric);">%</span>
+            </div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:6px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;">Lighthouse Score</div>
+          </div>
+
+          <div class="stat-divider"></div>
+
+          <div class="stat-item" style="text-align:center;">
+            <div style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:white;letter-spacing:-0.04em;line-height:1;">
+              4.9<span style="color:var(--electric);">★</span>
+            </div>
+            <div style="font-size:0.72rem;color:rgba(255,255,255,0.45);margin-top:6px;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;">Client Satisfaction</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TRUSTED BY -->
+      <section class="trusted-section">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+          <p style="text-align:center;font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--slate-400);margin-bottom:28px;">Trusted by forward-thinking teams across</p>
+          <div style="display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:40px 60px;">
+            
+            <span class="trust-logo">AVION&nbsp;FARM</span>
+            <span class="trust-logo">LANKA HOLIDAY&nbsp;JOURNEY</span>
+            <span class="trust-logo">4GLANKA&nbsp;TOURS</span>
+            <span class="trust-logo">Hibiscus Cleaning&nbsp;Company Bermuda</span>
+            
+          </div>
+        </div>
+      </section>
+
+      <!-- BENTO / VALUE PROP -->
+      <section style="padding:100px 0;background:#ffffff;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+          <div style="text-align:center;margin-bottom:60px;">
+            <!-- <span class="section-label">Our Core Disciplines</span> -->
+            <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin-top:12px;max-width:760px;margin-left:auto;margin-right:auto;">Bespoke Architecture for Small to Medium Enterprises</h2>
+            <p class="section-desc reveal" style="max-width:500px;margin:16px auto 0;font-size:0.95rem;">We bridge the gap between high-end global tech engineering and cost-effective digital solutions for growing local and global brands.</p>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;" class="bento-grid">
+            <div class="bento-card reveal reveal-delay-1">
+              <!-- <div class="bento-card-icon" style="background:var(--electric-pale);">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="2" y="2" width="8" height="8" rx="2" fill="#2563EB"/><rect x="12" y="2" width="8" height="8" rx="2" fill="#2563EB" opacity="0.4"/><rect x="2" y="12" width="8" height="8" rx="2" fill="#2563EB" opacity="0.4"/><rect x="12" y="12" width="8" height="8" rx="2" fill="#2563EB" opacity="0.2"/></svg>
+              </div> -->
+              <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px;">High-Performance Web Platforms</h3>
+              <p style="font-size:0.88rem;color:var(--slate-500);line-height:1.7;">Turn traffic into revenue. We engineer ultra-fast, conversion-optimized landing pages built to capture qualified leads and automate your digital sales process 24/7.</p>
+              <div style="margin-top:20px;display:flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:var(--electric);cursor:pointer;" onclick="navigateTo('services')">Learn more <span>→</span></div>
+            </div>
+            <div class="bento-card bento-card-featured reveal reveal-delay-2">
+              <!-- <div class="bento-card-icon" style="background:rgba(37,99,235,0.15);">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 6h14M4 11h9M4 16h6" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/><circle cx="17" cy="15" r="3" stroke="#60a5fa" stroke-width="1.5"/></svg>
+              </div> -->
+              <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:white;letter-spacing:-0.02em;margin-bottom:12px;">Micro ERP & POS Solutions</h3>
+              <p style="font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.7;">Custom business automation platforms tailored for growing SMEs. Eliminate manual human errors with automated inventory tracking, real-time ledger reconciliation, and live remote dashboard access.</p>
+              <div style="margin-top:20px;display:flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:rgba(96,165,250,0.9);cursor:pointer;" onclick="navigateTo('services')">Explore solutions <span>→</span></div>
+            </div>
+            <div class="bento-card reveal reveal-delay-3">
+              <!-- <div class="bento-card-icon" style="background:#f0fdf4;">
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M6 8l-4 3 4 3M16 8l4 3-4 3M13 5l-4 12" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div> -->
+              <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--navy);letter-spacing:-0.02em;margin-bottom:12px;">Smart Workflow Automation</h3>
+              <p style="font-size:0.88rem;color:var(--slate-500);line-height:1.7;">Cut your operational hours in half. We eliminate repetitive daily tasks by connecting your software tools, automating client follow-ups, and building scalable pipelines with zero technical debt.</p>
+              <div style="margin-top:20px;display:flex;align-items:center;gap:6px;font-size:0.78rem;font-weight:600;color:var(--electric);cursor:pointer;" onclick="navigateTo('services')">Discover Systems <span>→</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════
+     HOW WE WORK — PROCESS SECTION
+     ══════════════════════════════════════════════════════════ -->
+      <section style="padding:100px 0;background:var(--slate-50);">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+
+          <!-- Section Header -->
+          <div style="text-align:center;margin-bottom:72px;">
+            <!-- <span class="section-label">Our Process</span> -->
+            <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin-top:12px;">How We Work</h2>
+            <p class="section-desc reveal" style="max-width:500px;margin:16px auto 0;font-size:0.95rem;">From the first call to final deployment — a transparent, repeatable process that delivers on time, every time.</p>
+          </div>
+
+          <!-- Steps Grid -->
+          <div class="process-steps-grid">
+
+            <!-- Step 01 -->
+            <div class="process-step reveal reveal-delay-1">
+              <div class="process-step-number">01</div>
+              <!-- <div class="process-step-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M14 3C8 3 3 8 3 14s5 11 11 11 11-5 11-11S20 3 14 3z" stroke="#2563EB" stroke-width="1.5"/>
+                  <path d="M14 8v6l4 2" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div> -->
+              <h3 class="process-step-title">Business Audit & Strategy</h3>
+              <p class="process-step-desc">We deep-dive into your business goals, target users, and technical requirements. You get a clear project blueprint before a single line of code is written.</p>
+              <ul class="process-step-list">
+                <li>Requirements gathering</li>
+                <li>Competitor analysis</li>
+                <li>Tech stack selection</li>
+              </ul>
+              <div class="process-step-connector"></div>
+            </div>
+
+            <!-- Step 02 -->
+            <div class="process-step reveal reveal-delay-2">
+              <div class="process-step-number">02</div>
+              <!-- <div class="process-step-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <rect x="3" y="3" width="22" height="16" rx="3" stroke="#2563EB" stroke-width="1.5"/>
+                  <path d="M9 25h10M14 19v6" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M8 10h4M8 13h8" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div> -->
+              <h3 class="process-step-title">Architecture & Workflow Design</h3>
+              <p class="process-step-desc">High-fidelity Figma prototypes, database schema design, and system architecture are finalized. You see exactly what you're getting before we build it.</p>
+              <ul class="process-step-list">
+                <li>Figma UI/UX prototypes</li>
+                <li>Database schema design</li>
+                <li>API architecture planning</li>
+              </ul>
+              <div class="process-step-connector"></div>
+            </div>
+
+            <!-- Step 03 -->
+            <div class="process-step reveal reveal-delay-3">
+              <div class="process-step-number">03</div>
+              <!-- <div class="process-step-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M8 10l-4 4 4 4M20 10l4 4-4 4M16 6l-4 16" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div> -->
+              <h3 class="process-step-title">Development & Testing</h3>
+              <p class="process-step-desc">Agile sprints with weekly client demos. Every feature is unit tested, integration tested, and reviewed before it merges. Zero surprises at launch.</p>
+              <ul class="process-step-list">
+                <li>Weekly demo sessions</li>
+                <li>Automated test coverage</li>
+                <li>Code review & QA audits</li>
+              </ul>
+              <div class="process-step-connector"></div>
+            </div>
+
+            <!-- Step 04 -->
+            <div class="process-step reveal reveal-delay-4">
+              <div class="process-step-number">04</div>
+              <!-- <div class="process-step-icon">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                  <path d="M14 3l2.5 5 5.5.8-4 3.9.9 5.5L14 16l-4.9 2.6.9-5.5-4-3.9 5.5-.8L14 3z" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 22h16" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div> -->
+              <h3 class="process-step-title">Seamless Launch & Growth</h3>
+              <p class="process-step-desc">CI/CD pipelines, zero-downtime deployment, and post-launch monitoring. We don't disappear after handoff — we're your long-term technical partner.</p>
+              <ul class="process-step-list">
+                <li>CI/CD pipeline setup</li>
+                <li>Performance monitoring</li>
+                <li>Ongoing maintenance</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- Bottom CTA -->
+          <div class="reveal" style="text-align:center;margin-top:64px;">
+            <p style="font-size:0.9rem;color:var(--slate-400);margin-bottom:20px;">Ready to start your project?</p>
+            <button class="btn-primary" onclick="navigateTo('contact')">Get a Free Tech Audit for Your Business →</button>
+          </div>
+
+        </div>
+      </section>
+
+          <!-- ══════════════════════════════════════════════════════════
+     TECH STACK / CAPABILITIES SECTION
+     ══════════════════════════════════════════════════════════ -->
+      <section style="padding:20px 0;background:var(--slate-50);border-top:1px solid var(--slate-100);border-bottom:1px solid var(--slate-100);overflow:hidden;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;text-align:center;margin-bottom:48px;">
+          <!-- <span class="section-label">Our Capabilities</span> -->
+          <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin-top:12px;">Technologies We Master</h2>
+          <p class="section-desc reveal" style="max-width:480px;margin:16px auto 0;font-size:0.95rem;">We work with modern, battle-tested technologies that scale with your business — not just what's trending.</p>
+        </div>
+
+        <!-- Marquee Row 1 — Left to Right -->
+        <div class="marquee-wrapper" style="margin-bottom:20px;">
+          <div class="marquee-track marquee-left">
+            <!-- Tech items — duplicated for seamless loop -->
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000"/><path d="M5 5h18v18H5z" fill="#000"/><path d="M14 6L6 22h4l1.5-3h5L18 22h4L14 6zm0 5.5l1.8 3.5h-3.6L14 11.5z" fill="white"/></svg>
+              <span>Next.js</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="#61DAFB" opacity="0.15"/><circle cx="14" cy="14" r="3" fill="#61DAFB"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(120 14 14)"/></svg>
+              <span>React</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#3178C6" opacity="0.15"/><path d="M6 15h6v2H9v6H7v-6H6v-2zm7 0h6l-3 4 3 4h-6l3-4-3-4z" fill="#3178C6"/></svg>
+              <span>TypeScript</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#339933" opacity="0.15"/><path d="M14 4c5.5 0 10 4.5 10 10s-4.5 10-10 10S4 19.5 4 14 8.5 4 14 4zm-1.5 6v4H9l5 6 5-6h-3.5v-4h-3z" fill="#339933"/></svg>
+              <span>Node.js</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#47A248" opacity="0.15"/><path d="M14 6c-1.5 0-2.5.8-2.5 2 0 2 3 2.5 3 4.5 0 1.2-1 2-2.5 2s-2.5-.8-2.5-2h2c0 .5.2.8.5.8s.5-.3.5-.8c0-2-3-2.5-3-4.5C9 6.8 10 6 14 6zm-4 10h8v2h-8v-2z" fill="#47A248"/></svg>
+              <span>MongoDB</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#336791" opacity="0.15"/><ellipse cx="14" cy="9" rx="8" ry="3.5" stroke="#336791" stroke-width="1.5" fill="none"/><path d="M6 9v10c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5V9" stroke="#336791" stroke-width="1.5" fill="none"/><path d="M6 14c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5" stroke="#336791" stroke-width="1.5" fill="none"/></svg>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#06B6D4" opacity="0.15"/><path d="M8 16l4-8 4 8M8 13h8" stroke="#06B6D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000" opacity="0.08"/><path d="M6 22V8l8-4 8 4v14l-8 4-8-4z" stroke="#000" stroke-width="1.5" fill="none"/><path d="M14 4v18M6 8l8 4 8-4" stroke="#000" stroke-width="1.5"/></svg>
+              <span>Prisma ORM</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#F05032" opacity="0.15"/><path d="M14 5l9 9-9 9-9-9 9-9zm0 3L8 14l6 6 6-6-6-6z" fill="#F05032"/></svg>
+              <span>Git</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000" opacity="0.08"/><path d="M6 14c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" stroke="#000" stroke-width="1.5" fill="none"/><path d="M14 6c0 0-4 3-4 8s4 8 4 8M14 6c0 0 4 3 4 8s-4 8-4 8M6 14h16" stroke="#000" stroke-width="1.2"/></svg>
+              <span>Vercel</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#FF9900" opacity="0.15"/><path d="M8 10h3l1.5 5 1.5-5h3l-3 8h-3L8 10z" fill="#FF9900"/><path d="M5 19c2.5 1.5 5.5 2.5 9 2.5s6.5-1 9-2.5" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+              <span>AWS</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#F24E1E" opacity="0.15"/><circle cx="10" cy="10" r="4" stroke="#F24E1E" stroke-width="1.5" fill="none"/><circle cx="18" cy="10" r="4" stroke="#A259FF" stroke-width="1.5" fill="none"/><circle cx="10" cy="18" r="4" stroke="#1ABCFE" stroke-width="1.5" fill="none"/><circle cx="18" cy="18" r="4" stroke="#0ACF83" stroke-width="1.5" fill="none"/></svg>
+              <span>Figma</span>
+            </div>
+
+            <!-- Duplicate for seamless loop -->
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000"/><path d="M5 5h18v18H5z" fill="#000"/><path d="M14 6L6 22h4l1.5-3h5L18 22h4L14 6zm0 5.5l1.8 3.5h-3.6L14 11.5z" fill="white"/></svg>
+              <span>Next.js</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="12" fill="#61DAFB" opacity="0.15"/><circle cx="14" cy="14" r="3" fill="#61DAFB"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(60 14 14)"/><ellipse cx="14" cy="14" rx="12" ry="4.5" stroke="#61DAFB" stroke-width="1.5" fill="none" transform="rotate(120 14 14)"/></svg>
+              <span>React</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#3178C6" opacity="0.15"/><path d="M6 15h6v2H9v6H7v-6H6v-2zm7 0h6l-3 4 3 4h-6l3-4-3-4z" fill="#3178C6"/></svg>
+              <span>TypeScript</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#339933" opacity="0.15"/><path d="M14 4c5.5 0 10 4.5 10 10s-4.5 10-10 10S4 19.5 4 14 8.5 4 14 4zm-1.5 6v4H9l5 6 5-6h-3.5v-4h-3z" fill="#339933"/></svg>
+              <span>Node.js</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#47A248" opacity="0.15"/><path d="M14 6c-1.5 0-2.5.8-2.5 2 0 2 3 2.5 3 4.5 0 1.2-1 2-2.5 2s-2.5-.8-2.5-2h2c0 .5.2.8.5.8s.5-.3.5-.8c0-2-3-2.5-3-4.5C9 6.8 10 6 14 6zm-4 10h8v2h-8v-2z" fill="#47A248"/></svg>
+              <span>MongoDB</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#336791" opacity="0.15"/><ellipse cx="14" cy="9" rx="8" ry="3.5" stroke="#336791" stroke-width="1.5" fill="none"/><path d="M6 9v10c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5V9" stroke="#336791" stroke-width="1.5" fill="none"/><path d="M6 14c0 1.9 3.6 3.5 8 3.5s8-1.6 8-3.5" stroke="#336791" stroke-width="1.5" fill="none"/></svg>
+              <span>PostgreSQL</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#06B6D4" opacity="0.15"/><path d="M8 16l4-8 4 8M8 13h8" stroke="#06B6D4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Tailwind CSS</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000" opacity="0.08"/><path d="M6 22V8l8-4 8 4v14l-8 4-8-4z" stroke="#000" stroke-width="1.5" fill="none"/><path d="M14 4v18M6 8l8 4 8-4" stroke="#000" stroke-width="1.5"/></svg>
+              <span>Prisma ORM</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#F05032" opacity="0.15"/><path d="M14 5l9 9-9 9-9-9 9-9zm0 3L8 14l6 6 6-6-6-6z" fill="#F05032"/></svg>
+              <span>Git</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#000" opacity="0.08"/><path d="M6 14c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8-8-3.6-8-8z" stroke="#000" stroke-width="1.5" fill="none"/><path d="M14 6c0 0-4 3-4 8s4 8 4 8M14 6c0 0 4 3 4 8s-4 8-4 8M6 14h16" stroke="#000" stroke-width="1.2"/></svg>
+              <span>Vercel</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#FF9900" opacity="0.15"/><path d="M8 10h3l1.5 5 1.5-5h3l-3 8h-3L8 10z" fill="#FF9900"/><path d="M5 19c2.5 1.5 5.5 2.5 9 2.5s6.5-1 9-2.5" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+              <span>AWS</span>
+            </div>
+            <div class="tech-item">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="#F24E1E" opacity="0.15"/><circle cx="10" cy="10" r="4" stroke="#F24E1E" stroke-width="1.5" fill="none"/><circle cx="18" cy="10" r="4" stroke="#A259FF" stroke-width="1.5" fill="none"/><circle cx="10" cy="18" r="4" stroke="#1ABCFE" stroke-width="1.5" fill="none"/><circle cx="18" cy="18" r="4" stroke="#0ACF83" stroke-width="1.5" fill="none"/></svg>
+              <span>Figma</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Marquee Row 2 — Right to Left (slower) -->
+        <div class="marquee-wrapper">
+          <div class="marquee-track marquee-right">
+            <div class="tech-item tech-item-outline">
+              <span>REST APIs</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>GraphQL</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Redis</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Docker</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>CI/CD Pipelines</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Stripe Payments</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Supabase</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Firebase</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>SOLID Principles</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Agile / Scrum</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>Unit Testing</span>
+            </div>
+            <div class="tech-item tech-item-outline">
+              <span>E2E Testing</span>
+            </div>
+            <!-- Duplicate -->
+            <div class="tech-item tech-item-outline"><span>REST APIs</span></div>
+            <div class="tech-item tech-item-outline"><span>GraphQL</span></div>
+            <div class="tech-item tech-item-outline"><span>Redis</span></div>
+            <div class="tech-item tech-item-outline"><span>Docker</span></div>
+            <div class="tech-item tech-item-outline"><span>CI/CD Pipelines</span></div>
+            <div class="tech-item tech-item-outline"><span>Stripe Payments</span></div>
+            <div class="tech-item tech-item-outline"><span>Supabase</span></div>
+            <div class="tech-item tech-item-outline"><span>Firebase</span></div>
+            <div class="tech-item tech-item-outline"><span>SOLID Principles</span></div>
+            <div class="tech-item tech-item-outline"><span>Agile / Scrum</span></div>
+            <div class="tech-item tech-item-outline"><span>Unit Testing</span></div>
+            <div class="tech-item tech-item-outline"><span>E2E Testing</span></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════
+     FEATURED PROJECTS SECTION
+     ══════════════════════════════════════════════════════════ -->
+      <section style="padding:70px 0;background:#ffffff;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+
+          <!-- Section Header -->
+          <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:20px;">
+            <div>
+              <span class="section-label">Our Work</span>
+              <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin-top:12px;">Featured Projects</h2>
+              <p class="section-desc reveal" style="max-width:480px;margin-top:12px;font-size:0.95rem;">Real products. Real results. Here's what we've built for our clients.</p>
+            </div>
+            <button class="btn-secondary reveal" onclick="navigateTo('portfolio')">View All Projects →</button>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:80px;">
+
+            <!-- ── PROJECT 01: AVION FARM ── -->
+            <div class="featured-project reveal">
+              <div class="featured-project-content">
+
+                <!-- Left: Info -->
+                <div class="featured-project-info">
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                    <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate-400);font-family:'Syne',sans-serif;">Project 01</span>
+                    <span style="padding:3px 10px;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:100px;font-size:0.7rem;font-weight:600;color:#16a34a;">Live ↗</span>
+                  </div>
+
+                  <h3 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1;margin-bottom:8px;">Kantale Avion Farm Retreat</h3>
+                  <p style="font-size:0.78rem;color:var(--electric);font-weight:600;margin-bottom:16px;">avionfarm.com</p>
+                  <p style="font-size:0.92rem;color:var(--slate-500);line-height:1.8;margin-bottom:28px;">A full-stack marketing and booking platform for Sri Lanka's first eco-aviation hub. Integrates aviation sports, eco-tourism, and sustainable agriculture into a seamless digital experience — built for international visitors and local discovery alike.</p>
+
+                  <!-- Results -->
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:28px;">
+                    <div style="padding:14px;background:var(--slate-50);border-radius:12px;border:1px solid var(--slate-100);text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">99<span style="color:#16a34a;font-size:0.9rem;">%</span></div>
+                      <div style="font-size:0.65rem;color:var(--slate-400);margin-top:3px;font-weight:500;">Lighthouse</div>
+                    </div>
+                    <div style="padding:14px;background:var(--slate-50);border-radius:12px;border:1px solid var(--slate-100);text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">0.9<span style="color:#16a34a;font-size:0.9rem;">s</span></div>
+                      <div style="font-size:0.65rem;color:var(--slate-400);margin-top:3px;font-weight:500;">Load Time</div>
+                    </div>
+                    <div style="padding:14px;background:#f0fdf4;border-radius:12px;border:1px solid #dcfce7;text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#166534;letter-spacing:-0.04em;">100<span style="font-size:0.9rem;">%</span></div>
+                      <div style="font-size:0.65rem;color:#16a34a;margin-top:3px;font-weight:500;">On Time</div>
+                    </div>
+                  </div>
+
+                  <!-- Tech Stack -->
+                  <div style="margin-bottom:32px;">
+                    <p style="font-size:0.72rem;font-weight:600;color:var(--slate-400);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Tech Stack</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                      <span class="tag-pill">HTML</span>
+                      <span class="tag-pill">JavaScript</span>
+                      <span class="tag-pill">Tailwind CSS</span>
+                      <span class="tag-pill">Hostinger</span>
+                      <span class="tag-pill">Figma → Code</span>
+                    </div>
+                  </div>
+
+                  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="https://avionfarm.com" target="_blank" class="btn-primary">Visit Live Site ↗</a>
+                    <button class="btn-secondary" onclick="navigateTo('portfolio')">Case Study →</button>
+                  </div>
+                </div>
+
+                <!-- Right: Mockup -->
+                <div class="featured-project-mockup">
+                  <img src="./assets/avion.png" alt="Avion Farm" style="height:300px;width:auto;border: 2px solid var(--slate-200);border-radius: 10px;">
+                  <!-- Float badge -->
+                  <div class="mockup-float-badge" style="bottom:24px;right:-16px;">
+                    <span style="width:6px;height:6px;background:#16a34a;border-radius:50%;display:inline-block;"></span>
+                    Live & Performing
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="section-divider"></div>
+
+            <!-- ── PROJECT 02: Aura Studio ── -->
+            <div class="featured-project featured-project-reverse reveal">
+              <div class="featured-project-content">
+
+                <!-- Left: Mockup (reversed) -->
+                <div class="featured-project-mockup">
+                  <img src="./assets/aura.png" alt="Aura Studio" style="height:300px;width:auto;border: 2px solid var(--slate-200);border-radius: 10px;">
+                  <!-- Float badge -->
+                  <div class="mockup-float-badge" style="bottom:24px;left:-16px;right:auto;">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><circle cx="6" cy="6" r="5" fill="#eff6ff"/><path d="M6 3v3l1.5 1" stroke="#2563EB" stroke-width="1.2" stroke-linecap="round"/></svg>
+                    0.8s load time
+                  </div>
+                </div>
+
+                <!-- Right: Info -->
+                <div class="featured-project-info">
+                  <div style="display:flex;align-items:center;gap:10px;margin-bottom:20px;">
+                    <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate-400);font-family:'Syne',sans-serif;">Project 02</span>
+                    <span style="padding:3px 10px;background:#eff6ff;border:1px solid rgba(37,99,235,0.2);border-radius:100px;font-size:0.7rem;font-weight:600;color:var(--electric);">Demo ↗</span>
+                  </div>
+
+                  <h3 style="font-family:'Syne',sans-serif;font-size:2rem;font-weight:800;color:var(--navy);letter-spacing:-0.03em;line-height:1.1;margin-bottom:8px;">Aura Studio —</br>E-Commerce Site</h3>
+                  <p style="font-size:0.78rem;color:var(--electric);font-weight:600;margin-bottom:16px;">aurastudio.com</p>
+                  <p style="font-size:0.92rem;color:var(--slate-500);line-height:1.8;margin-bottom:28px;">A high-performance digital storefront engineered to eliminate friction in online retail. Built with headless architecture for lightning-fast load times, it automates product catalog rendering, captures qualified leads effortlessly, and cuts down overhead operational hours while scaling digital sales 24/7.</p>
+
+                  <!-- Results -->
+                  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:28px;">
+                    <div style="padding:14px;background:var(--slate-50);border-radius:12px;border:1px solid var(--slate-100);text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">218<span style="color:var(--electric);font-size:0.8rem;">%↑</span></div>
+                      <div style="font-size:0.65rem;color:var(--slate-400);margin-top:3px;font-weight:500;">Conversions</div>
+                    </div>
+                    <div style="padding:14px;background:var(--slate-50);border-radius:12px;border:1px solid var(--slate-100);text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">40<span style="color:var(--electric);">h↓</span></div>
+                      <div style="font-size:0.65rem;color:var(--slate-400);margin-top:3px;font-weight:500;">Manual Work / Month</div>
+                    </div>
+                    <div style="padding:14px;background:#eff6ff;border-radius:12px;border:1px solid rgba(37,99,235,0.15);text-align:center;">
+                      <div style="font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--electric);letter-spacing:-0.04em;">35<span style="font-size:0.9rem;">%↓</span></div>
+                      <div style="font-size:0.65rem;color:var(--electric);margin-top:3px;font-weight:500;">Overhead Costs</div>
+                    </div>
+                  </div>
+
+                  <!-- Tech Stack -->
+                  <div style="margin-bottom:32px;">
+                    <p style="font-size:0.72rem;font-weight:600;color:var(--slate-400);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px;">Tech Stack</p>
+                    <div style="display:flex;flex-wrap:wrap;gap:8px;">
+                      <span class="tag-pill">Next.js</span>
+                      <span class="tag-pill">Tailwind CSS</span>
+                      <span class="tag-pill">Node.js</span>
+                      <span class="tag-pill">Framer Motion</span>
+                      <span class="tag-pill">Headless Commerce</span>
+                    </div>
+                  </div>
+
+                  <div style="display:flex;gap:12px;flex-wrap:wrap;">
+                    <a href="http://aurastudio.com" target="_blank" class="btn-primary">Visit Demo Site ↗</a>
+                    <button class="btn-secondary" onclick="navigateTo('portfolio')">Case Study →</button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- ══════════════════════════════════════════════════════════
+     SOCIAL PROOF / TRUST SECTION
+     ══════════════════════════════════════════════════════════ -->
+      <section style="padding:50px 0;background:#ffffff;">
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+
+          <!-- Section Header -->
+          <div style="text-align:center;margin-bottom:72px;">
+            <!-- <span class="section-label">Why Us</span> -->
+            <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.8rem);margin-top:12px;">Why Local Startups Trust Nautilus Code</h2>
+            <p class="section-desc reveal" style="max-width:500px;margin:16px auto 0;font-size:0.95rem;">We don't just write code — we become your technical partner. Here's what sets us apart from every other agency in the market.</p>
+          </div>
+
+          <!-- Trust Cards Grid -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:64px;" class="trust-grid">
+
+            <!-- Card 1 -->
+            <div class="trust-card reveal reveal-delay-1">
+              <!-- <div class="trust-card-icon" style="background:#eff6ff;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7L12 2z" stroke="#2563EB" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M9 12l2 2 4-4" stroke="#2563EB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div> -->
+              <div class="trust-card-stat">100%</div>
+              <h3 class="trust-card-title">On-Time Delivery</h3>
+              <p class="trust-card-desc">Every project we've taken on has been delivered on or before the agreed deadline. We treat your timeline as seriously as our own.</p>
+              <div class="trust-card-proof">
+                <span class="trust-proof-dot" style="background:#16a34a;"></span>
+                <span>Verified across all projects</span>
+              </div>
+            </div>
+
+            <!-- Card 2 — Featured -->
+            <div class="trust-card trust-card-featured reveal reveal-delay-2">
+              <!-- <div class="trust-card-icon" style="background:rgba(255,255,255,0.1);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z" stroke="white" stroke-width="1.6" stroke-linejoin="round"/>
+                </svg>
+              </div> -->
+              <div class="trust-card-stat" style="color:white;">4.9<span style="font-size:1.4rem;color:rgba(255,255,255,0.5);">★</span></div>
+              <h3 class="trust-card-title" style="color:white;">Client Satisfaction</h3>
+              <p class="trust-card-desc" style="color:rgba(255,255,255,0.6);">Every client we've worked with has returned for additional work or referred us to another business. Our relationships don't end at handoff.</p>
+              <div class="trust-card-proof" style="border-color:rgba(255,255,255,0.1);">
+                <span class="trust-proof-dot" style="background:#60a5fa;"></span>
+                <span style="color:rgba(255,255,255,0.5);">Based on client feedback</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="trust-card reveal reveal-delay-3">
+              <!-- <div class="trust-card-icon" style="background:#f0fdf4;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#16a34a" stroke-width="1.6"/>
+                  <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2M12 12v.01" stroke="#16a34a" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </div> -->
+              <div class="trust-card-stat" style="color:var(--navy);">100%</div>
+              <h3 class="trust-card-title">Full Code Ownership</h3>
+              <p class="trust-card-desc">You own every line of code we write — no lock-ins, no proprietary platforms, no hidden dependencies. Full source code and documentation handed over.</p>
+              <div class="trust-card-proof">
+                <span class="trust-proof-dot" style="background:#16a34a;"></span>
+                <span>Guaranteed on every contract</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Testimonial Quote Cards -->
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px;" class="testimonial-grid">
+
+            <!-- Quote 1 — Avion Farm -->
+            <div class="testimonial-card reveal reveal-delay-1">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+                <div style="display:flex;gap:3px;">
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                </div>
+                <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
+                  <path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C10.4 3.6 7.6 6 7.2 9.6H14.4V24H0zm17.6 0V14.4C17.6 6.4 22.4 1.6 32 0l1.6 2.4c-5.6 1.2-8.4 3.6-8.8 7.2H32V24H17.6z" fill="rgba(37,99,235,0.08)"/>
+                </svg>
+              </div>
+              <p class="testimonial-quote">"Nautilus Code delivered our platform faster than expected and with a level of polish we didn't think was possible at this scale. The site has genuinely elevated how international visitors perceive Avion Farm."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:linear-gradient(135deg,#16a34a,#4ade80);">A</div>
+                <div>
+                  <p class="testimonial-name">Avion Farm Team</p>
+                  <p class="testimonial-role">Kantale Avion Farm Retreat · avionfarm.com</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quote 2 — Lanka Holiday Journey -->
+            <div class="testimonial-card reveal reveal-delay-2">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;">
+                <div style="display:flex;gap:3px;">
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                  <span style="color:#f59e0b;font-size:1rem;">★</span>
+                </div>
+                <svg width="32" height="24" viewBox="0 0 32 24" fill="none">
+                  <path d="M0 24V14.4C0 6.4 4.8 1.6 14.4 0l1.6 2.4C10.4 3.6 7.6 6 7.2 9.6H14.4V24H0zm17.6 0V14.4C17.6 6.4 22.4 1.6 32 0l1.6 2.4c-5.6 1.2-8.4 3.6-8.8 7.2H32V24H17.6z" fill="rgba(37,99,235,0.08)"/>
+                </svg>
+              </div>
+              <p class="testimonial-quote">"From day one, the Nautilus Code team understood exactly what we needed. Our inquiry conversion rate jumped significantly after launch and the site loads faster than anything we've had before. Truly professional work."</p>
+              <div class="testimonial-author">
+                <div class="testimonial-avatar" style="background:linear-gradient(135deg,#2563EB,#60a5fa);">L</div>
+                <div>
+                  <p class="testimonial-name">Lanka Holiday Journey</p>
+                  <p class="testimonial-role">Travel & Tourism · lankaholidayjourney.com</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Trust Bar -->
+          <div class="trust-bar reveal">
+            <div class="trust-bar-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <rect x="2" y="7" width="10" height="9" rx="1.5" stroke="#2563EB" stroke-width="1.3"/>
+                <path d="M5 7V5.5a4 4 0 018 0V7" stroke="#2563EB" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span>NDA on request</span>
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="#2563EB" stroke-width="1.3"/>
+                <path d="M6 9l2 2 4-4" stroke="#2563EB" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>No lock-in contracts</span>
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M9 2l2 5.5H17l-4.5 3.3 1.7 5.4L9 13l-5.2 3.2 1.7-5.4L1 7.5h6L9 2z" stroke="#2563EB" stroke-width="1.3" stroke-linejoin="round"/>
+              </svg>
+              <span>Full source code ownership</span>
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle cx="9" cy="9" r="7" stroke="#2563EB" stroke-width="1.3"/>
+                <path d="M9 5v4l2.5 2" stroke="#2563EB" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+              <span>Response within 24hrs</span>
+            </div>
+            <div class="trust-bar-divider"></div>
+            <div class="trust-bar-item">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <path d="M3 9h12M9 3l6 6-6 6" stroke="#2563EB" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Colombo, Sri Lanka 🇱🇰</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- CTA BAND -->
+      <section style="background:var(--navy);padding:80px 0;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(37,99,235,0.2) 0%,transparent 70%);pointer-events:none;"></div>
+        <div style="max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;" class="cta-grid">
+          <div>
+            <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;color:white;letter-spacing:-0.03em;margin-bottom:12px;">Ready to build something extraordinary?</h2>
+            <p style="color:rgba(255,255,255,0.55);font-size:1rem;line-height:1.6;">Scope your project with our team. We'll respond within 24 hours with a tailored technical proposal.</p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-end;">
+            <button class="btn-primary" style="background:white;color:var(--navy);white-space:nowrap;" onclick="navigateTo('contact')">Start a Project →</button>
+            <span style="font-size:0.75rem;color:rgba(255,255,255,0.35);text-align:right;">No commitment required</span>
+          </div>
+        </div>
+      </section>
+
+     
+    </div>
+  </div>
+
+
+  <div id="footer-placeholder"></div>
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+
+  <!-- Floating WhatsApp Button -->
+
+  <a href="https://wa.me/94713441221" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <script src="config.local.js"></script>
+  <script src="ai-assistant.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Nautilus Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/config.js"></script> <link rel="stylesheet" href="css/style.css">  <script src="js/main.js"></script>
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+
+<div>
+  <div>
+    <!-- ============================================================
+     ABOUT PAGE — pages/about.html
+     Injected into index.html as:  <div id="page-about" class="page">
+     ============================================================ -->
+
+<!-- ── HERO (dark) ──────────────────────────────────────────── -->
+<section style="background:var(--navy);padding:100px 0 80px;position:relative;overflow:hidden;padding-top:148px;">
+  <div style="position:absolute;top:0;right:0;width:600px;height:600px;background:radial-gradient(circle,rgba(37,99,235,0.15) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="about-hero-grid">
+    <div>
+      <span style="font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:rgba(37,99,235,0.8);display:block;margin-bottom:16px;">The Nautilus Way</span>
+      <h1 style="font-family:'Syne',sans-serif;font-size:clamp(2.4rem,4vw,3.2rem);font-weight:800;color:white;letter-spacing:-0.04em;line-height:1.05;margin-bottom:20px;">Nature's perfect ratio, applied to software.</h1>
+      <p style="color:rgba(255,255,255,0.55);line-height:1.8;font-size:0.95rem;">The chambered nautilus shell grows according to the Fibonacci sequence — each new chamber is proportionally perfect, self-similar, and structurally optimal. We apply this same mathematical philosophy to every system we architect.</p>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:320px;">
+        <!-- Fibonacci rectangles -->
+        <rect x="60" y="60" width="240" height="240" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <rect x="60" y="60" width="148" height="148" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <rect x="60" y="208" width="148" height="92"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <rect x="208" y="117" width="92" height="92"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <rect x="208" y="60"  width="92" height="57"  fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+        <!-- Spiral arcs -->
+        <path class="fibonacci-path" d="M208 208 
+               C208 182, 228 162, 252 162 
+               C292 162, 300 209, 300 240 
+               C300 290, 256 300, 210 300 
+               C140 300, 60 250, 60 178 
+               C60 94, 134 60, 208 60"
+          fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+        <!-- Center dot -->
+        <circle cx="208" cy="208" r="4" fill="#3b82f6" opacity="0.8"/>
+        <circle cx="208" cy="208" r="8" fill="none" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+        <!-- φ label -->
+        <text x="40" y="50" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.3)" font-style="italic">φ</text>
+        <text x="48" y="50" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.2)"> = 1.6180339...</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── PHILOSOPHY ────────────────────────────────────────────── -->
+<section style="padding:80px 0;background:white;overflow:hidden;">
+  <div style="max-width:1200px;margin:0 auto;padding:2rem 2rem;box-sizing:border-box;width:100%;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;" class="philosophy-grid">
+
+      <!-- Left: Philosophy text -->
+      <div>
+        <span class="section-label">Our Philosophy</span>
+        <h2 class="section-title" style="font-size:2rem;margin-top:12px;margin-bottom:20px;">Modular. Proportional. Infinitely scalable.</h2>
+        <p style="color:var(--slate-500);line-height:1.8;margin-bottom:16px;">Just as each nautilus chamber is self-contained yet part of a larger harmonic whole, our software modules are independently deployable, clearly bounded, and designed to compose effortlessly into larger systems.</p>
+        <p style="color:var(--slate-500);line-height:1.8;margin-bottom:24px;">We reject the accumulation of technical debt the way nature rejects inefficiency. Every architectural decision is made with the 3-year maintenance window in mind — not just the next sprint deadline.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--slate-50);border-radius:10px;border:1px solid var(--slate-100);">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--electric);flex-shrink:0;margin-top:5px;"></div>
+            <div><p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">SOLID Architecture Compliance</p><p style="font-size:0.82rem;color:var(--slate-500);">Every codebase we deliver passes a full SOLID principles review before handoff — no exceptions.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--slate-50);border-radius:10px;border:1px solid var(--slate-100);">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--electric);flex-shrink:0;margin-top:5px;"></div>
+            <div><p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Documentation-First Development</p><p style="font-size:0.82rem;color:var(--slate-500);">API documentation, ADRs, and system diagrams are produced alongside code — not as an afterthought.</p></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:16px;background:var(--slate-50);border-radius:10px;border:1px solid var(--slate-100);">
+            <div style="width:8px;height:8px;border-radius:50%;background:var(--electric);flex-shrink:0;margin-top:5px;"></div>
+            <div><p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Zero-Compromise Testing Coverage</p><p style="font-size:0.82rem;color:var(--slate-500);">Unit, integration, and E2E tests ship with every production engagement. Coverage below 80% is non-negotiable.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Metrics + Promise card -->
+      <div>
+        <div style="background:var(--navy);border-radius:20px;padding:40px;margin-bottom:20px;">
+          <p style="font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:28px;">Performance Benchmarks</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:white;letter-spacing:-0.06em;line-height:1;">99<span style="font-size:1.4rem;color:rgba(37,99,235,0.9);">%</span></div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.4;">Target Lighthouse<br>Page Speed Score</div>
+            </div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:white;letter-spacing:-0.06em;line-height:1;">100<span style="font-size:1.4rem;color:rgba(37,99,235,0.9);">%</span></div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.4;">Clean Architecture<br>Compliance Rate</div>
+            </div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:white;letter-spacing:-0.06em;line-height:1;">48<span style="font-size:1.4rem;color:rgba(37,99,235,0.9);">+</span></div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.4;">Successful projects<br>across 12 industries</div>
+            </div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:white;letter-spacing:-0.06em;line-height:1;">&lt;1s</div>
+              <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:6px;line-height:1.4;">Average First<br>Contentful Paint</div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--electric-pale);border:1px solid rgba(37,99,235,0.15);border-radius:16px;padding:24px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" style="flex-shrink:0;">
+              <circle cx="16" cy="16" r="15" stroke="#2563EB" stroke-width="1.5" opacity="0.3"/>
+              <path d="M16 16 C16 12, 20 10, 23 13 C26 16, 24 21, 20 22 C15 24, 10 21, 9 16 C8 11, 12 7, 16 7" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <circle cx="16" cy="16" r="2" fill="#2563EB"/>
+            </svg>
+            <div>
+              <p style="font-weight:700;font-size:0.9rem;color:var(--navy);margin-bottom:6px;">The Nautilus Promise</p>
+              <p style="font-size:0.83rem;color:var(--slate-600);line-height:1.65;">Every system we deliver is architecturally proportional — complex enough to solve the problem, minimal enough to be maintained without us. That's the Fibonacci principle in code.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── OUR STORY ─────────────────────────────────────────────── -->
+<section style="padding:100px 0;background:white;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="about-hero-grid">
+      
+      <!-- Left: Story -->
+      <div>
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title" style="font-size:2rem;margin-top:12px;margin-bottom:24px;">Built out of frustration with how software was being sold.</h2>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <p style="color:var(--slate-500);line-height:1.85;font-size:0.95rem;">Nautilus Code was founded in Katunayake after watching too many local businesses pay large sums for websites that looked impressive but generated zero business value — platforms that couldn't be maintained, didn't convert visitors, and broke within 6 months.</p>
+          <p style="color:var(--slate-500);line-height:1.85;font-size:0.95rem;">We started with a simple belief: <strong style="color:var(--navy);">software should solve real operational problems, not just look good on a portfolio.</strong> Every system we build is measured against one question — did it save the client time, money, or both?</p>
+          <p style="color:var(--slate-500);line-height:1.85;font-size:0.95rem;">Today, Nautilus Code operates as a lean, senior-only engineering team — delivering enterprise-grade systems to ambitious businesses across Sri Lanka and internationally.</p>
+        </div>
+        <div style="display:flex;gap:32px;margin-top:36px;padding-top:32px;border-top:1px solid var(--slate-100);">
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">2025</div>
+            <div style="font-size:0.78rem;color:var(--slate-400);margin-top:2px;">Founded in Katunayake</div>
+          </div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">10+</div>
+            <div style="font-size:0.78rem;color:var(--slate-400);margin-top:2px;">Projects Delivered</div>
+          </div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.04em;">3</div>
+            <div style="font-size:0.78rem;color:var(--slate-400);margin-top:2px;">Countries Served</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Timeline -->
+      <div style="position:relative;">
+        <div style="display:flex;flex-direction:column;gap:0;">
+
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--electric);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:white;">2025</div>
+              <div style="width:2px;height:48px;background:var(--slate-100);margin-top:4px;"></div>
+            </div>
+            <div style="padding-bottom:32px;padding-top:8px;">
+              <p style="font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:6px;">Founded in Katunayake, Sri Lanka</p>
+              <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.6;">Started with a single mission: build software that actually delivers business value — not just visual impressions.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:white;">2025</div>
+              <div style="width:2px;height:48px;background:var(--slate-100);margin-top:4px;"></div>
+            </div>
+            <div style="padding-bottom:32px;padding-top:8px;">
+              <p style="font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:6px;">First Enterprise ERP Delivered</p>
+              <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.6;">Apex Retail's 6-hour daily reconciliation process reduced to 8 minutes. The Nautilus method proven at scale.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:20px;align-items:flex-start;">
+            <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0;">
+              <div style="width:44px;height:44px;border-radius:50%;background:var(--electric-pale);border:2px solid var(--electric);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;color:var(--electric);">2026</div>
+            </div>
+            <div style="padding-top:8px;">
+              <p style="font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:6px;">Expanding to AI & Automation</p>
+              <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.6;">Launching AI-powered business automation systems — WhatsApp bots, intelligent dashboards, and smart procurement platforms.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VALUES ────────────────────────────────────────────────── -->
+<section style="padding:100px 0;background:var(--slate-50);border-top:1px solid var(--slate-100);">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">What We Stand For</span>
+      <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.6rem);margin-top:12px;">Our core values aren't on a wall. They're in our code.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;" class="bento-grid">
+
+      <div class="bento-card reveal reveal-delay-1" style="border-top:3px solid #2563EB;">
+        <!-- <div style="width:48px;height:48px;background:var(--electric-pale);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Precision Over Speed</h3>
+        <p style="font-size:0.87rem;color:var(--slate-500);line-height:1.7;">We'd rather take one more day to get it right than ship something that breaks in production. Every line of code is deliberate.</p>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-2" style="border-top:3px solid #7c3aed;">
+        <!-- <div style="width:48px;height:48px;background:#f5f3ff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#7c3aed" stroke-width="1.8"/><path d="M12 8v4l3 3" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Radical Transparency</h3>
+        <p style="font-size:0.87rem;color:var(--slate-500);line-height:1.7;">No hidden phases. No surprise invoices. Every client gets weekly progress updates, access to the repository, and an open line to the engineer.</p>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-3" style="border-top:3px solid #16a34a;">
+        <!-- <div style="width:48px;height:48px;background:#f0fdf4;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">ROI-First Engineering</h3>
+        <p style="font-size:0.87rem;color:var(--slate-500);line-height:1.7;">Every feature we build is justified by a business outcome. If it doesn't save time, reduce cost, or increase revenue — we question why it's being built.</p>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-1" style="border-top:3px solid #0891b2;">
+        <!-- <div style="width:48px;height:48px;background:#ecfeff;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#0891b2" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#0891b2" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Client Ownership Always</h3>
+        <p style="font-size:0.87rem;color:var(--slate-500);line-height:1.7;">You own 100% of the code, documentation, and infrastructure we build for you. No lock-ins. No subscriptions to us. Full handoff, always.</p>
+      </div>
+
+      <div class="bento-card reveal reveal-delay-2" style="border-top:3px solid #ea580c;">
+        <!-- <div style="width:48px;height:48px;background:#fff7ed;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#ea580c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px;">Senior-Only Execution</h3>
+        <p style="font-size:0.87rem;color:var(--slate-500);line-height:1.7;">We don't hand your project to juniors after the pitch. The engineers you meet are the engineers who build your system — no outsourcing, no interns.</p>
+      </div>
+
+      <div class="bento-card bento-card-featured reveal reveal-delay-3" style="border-top:3px solid #3b82f6;">
+        <!-- <div style="width:48px;height:48px;background:rgba(255,255,255,0.1);border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="white" stroke-width="1.8"/><path d="M12 6v6l4 2" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+        </div> -->
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:white;margin-bottom:10px;">Long-term Partnership</h3>
+        <p style="font-size:0.87rem;color:rgba(255,255,255,0.65);line-height:1.7;">We don't disappear after launch. We become your ongoing technical partner — available for maintenance, scaling, and new feature development as your business grows.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY US COMPARISON ──────────────────────────────────────── -->
+<section style="padding:100px 0;background:white;">
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">Why Nautilus Code</span>
+      <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.6rem);margin-top:12px;">The honest comparison.</h2>
+      <p style="color:var(--slate-500);margin-top:12px;font-size:0.95rem;">How we compare to the two most common alternatives businesses consider.</p>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:separate;border-spacing:0;">
+        <thead>
+          <tr>
+            <th style="padding:16px 20px;text-align:left;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--slate-400);border-bottom:2px solid var(--slate-100);width:35%;"></th>
+            <th style="padding:16px 20px;text-align:center;font-size:0.85rem;font-weight:700;color:var(--slate-400);border-bottom:2px solid var(--slate-100);">Freelancer</th>
+            <th style="padding:16px 20px;text-align:center;background:var(--navy);border-radius:16px 16px 0 0;position:relative;">
+              <span style="font-size:0.85rem;font-weight:700;color:white;display:block;">Nautilus Code</span>
+              <span style="font-size:0.65rem;background:var(--electric);color:white;padding:2px 8px;border-radius:100px;margin-top:4px;display:inline-block;">Recommended</span>
+            </th>
+            <th style="padding:16px 20px;text-align:center;font-size:0.85rem;font-weight:700;color:var(--slate-400);border-bottom:2px solid var(--slate-100);">Large Agency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Row 1 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Senior engineers on your project</td>
+            <td class="comparison-cell">
+              <span class="comp-maybe">Sometimes</span>
+            </td>
+            <td class="comparison-cell comp-featured">
+              <span class="comp-yes">✓ Always</span>
+            </td>
+            <td class="comparison-cell">
+              <span class="comp-no">✗ Rarely</span>
+            </td>
+          </tr>
+          <!-- Row 2 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Full code ownership transfer</td>
+            <td class="comparison-cell"><span class="comp-yes">✓ Yes</span></td>
+            <td class="comparison-cell comp-featured"><span class="comp-yes">✓ Always</span></td>
+            <td class="comparison-cell"><span class="comp-no">✗ Often locked</span></td>
+          </tr>
+          <!-- Row 3 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Transparent weekly progress</td>
+            <td class="comparison-cell"><span class="comp-maybe">Varies</span></td>
+            <td class="comparison-cell comp-featured"><span class="comp-yes">✓ Every week</span></td>
+            <td class="comparison-cell"><span class="comp-maybe">Monthly reports</span></td>
+          </tr>
+          <!-- Row 4 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Business ROI focused</td>
+            <td class="comparison-cell"><span class="comp-no">✗ Task focused</span></td>
+            <td class="comparison-cell comp-featured"><span class="comp-yes">✓ Always</span></td>
+            <td class="comparison-cell"><span class="comp-maybe">Sometimes</span></td>
+          </tr>
+          <!-- Row 5 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Post-launch support included</td>
+            <td class="comparison-cell"><span class="comp-no">✗ Extra charge</span></td>
+            <td class="comparison-cell comp-featured"><span class="comp-yes">✓ 30 days free</span></td>
+            <td class="comparison-cell"><span class="comp-no">✗ Retainer required</span></td>
+          </tr>
+          <!-- Row 6 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">NDA & confidentiality</td>
+            <td class="comparison-cell"><span class="comp-maybe">On request</span></td>
+            <td class="comparison-cell comp-featured"><span class="comp-yes">✓ Standard</span></td>
+            <td class="comparison-cell"><span class="comp-yes">✓ Yes</span></td>
+          </tr>
+          <!-- Row 7 -->
+          <tr class="comparison-row">
+            <td class="comparison-label">Pricing</td>
+            <td class="comparison-cell"><span style="font-size:0.85rem;color:var(--slate-600);">Low</span></td>
+            <td class="comparison-cell comp-featured"><span style="font-size:0.85rem;color:white;font-weight:600;">Mid-range</span></td>
+            <td class="comparison-cell"><span style="font-size:0.85rem;color:var(--slate-600);">High</span></td>
+          </tr>
+          <!-- Last Row -->
+          <tr>
+            <td style="padding:20px;"></td>
+            <td style="padding:20px;text-align:center;"></td>
+            <td style="padding:20px;text-align:center;background:var(--navy);border-radius:0 0 16px 16px;">
+              <button class="btn-primary" style="background:white;color:var(--navy);font-size:0.85rem;padding:10px 20px;" onclick="navigateTo('contact')">Work With Us →</button>
+            </td>
+            <td style="padding:20px;text-align:center;"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── TEAM EXPANDED ──────────────────────────────────────────── -->
+<section style="padding:100px 0;background:var(--slate-50);border-top:1px solid var(--slate-100);">
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+    <div style="text-align:center;margin-bottom:64px;">
+      <span class="section-label">The People</span>
+      <h2 class="section-title reveal" style="font-size:clamp(1.9rem,3.5vw,2.6rem);margin-top:12px;">You work directly with us. No middlemen.</h2>
+      <p style="color:var(--slate-500);margin-top:12px;max-width:520px;margin-left:auto;margin-right:auto;font-size:0.95rem;">Every client communicates directly with the engineer building their product. Our size is our advantage.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px;" class="bento-grid">
+
+      <!-- Team Member 1 -->
+      <div class="team-card reveal reveal-delay-1">
+        <div class="team-card-header">
+          <div class="team-avatar" style="background:linear-gradient(135deg,var(--navy),var(--electric));">A</div>
+          <div class="team-avatar-ring"></div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Anjana Fernando</h3>
+          <p class="team-role">Founder & Lead Architect</p>
+          <!-- <p class="team-bio">Full-stack engineer with expertise in Next.js, PostgreSQL, and system architecture. Leads all technical decisions and client engagements. Previously built systems for retail, tourism, and fintech sectors.</p>
+          <div class="team-skills">
+            <span class="tag-pill">Next.js</span>
+            <span class="tag-pill">System Design</span>
+            <span class="tag-pill">PostgreSQL</span>
+          </div> -->
+          <a href="https://www.linkedin.com/in/anjana-fernando-5757811b7/" target="_blank" class="team-linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+
+      <!-- Team Member 2 -->
+      <!-- <div class="team-card reveal reveal-delay-2">
+        <div class="team-card-header">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#0f3270,#2563EB);">K</div>
+          <div class="team-avatar-ring"></div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Kavisha M.</h3>
+          <p class="team-role">Full-Stack Engineer</p>
+          <p class="team-bio">Specializes in backend architecture, API design, and database optimization. Builds the core systems that power our ERP and automation platforms with zero-compromise reliability.</p>
+          <div class="team-skills">
+            <span class="tag-pill">Node.js</span>
+            <span class="tag-pill">API Design</span>
+            <span class="tag-pill">MongoDB</span>
+          </div>
+          <a href="#" class="team-linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div> -->
+
+      <!-- Team Member 3 -->
+      <!-- <div class="team-card reveal reveal-delay-3">
+        <div class="team-card-header">
+          <div class="team-avatar" style="background:linear-gradient(135deg,#1a4a8f,#3b82f6);">D</div>
+          <div class="team-avatar-ring"></div>
+        </div>
+        <div class="team-card-body">
+          <h3 class="team-name">Dineth S.</h3>
+          <p class="team-role">UI/UX Strategist</p>
+          <p class="team-bio">Leads interface design and conversion rate optimization. Translates complex business requirements into clean, intuitive user experiences that drive measurable results.</p>
+          <div class="team-skills">
+            <span class="tag-pill">Figma</span>
+            <span class="tag-pill">CRO</span>
+            <span class="tag-pill">Design Systems</span>
+          </div>
+          <a href="#" class="team-linkedin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="1.8"/></svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div> -->
+
+    </div>
+  </div>
+</section>
+
+<!-- ── LOCATION & CULTURE ─────────────────────────────────────── -->
+<section style="padding:100px 0;background:white;border-top:1px solid var(--slate-100);">
+  <div style="max-width:1100px;margin:0 auto;padding:0 2rem;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;" class="about-hero-grid">
+      
+      <!-- Left -->
+      <div>
+        <span class="section-label">Where We Are</span>
+        <h2 class="section-title" style="font-size:2rem;margin-top:12px;margin-bottom:20px;">Based in Colombo. Built for the world.</h2>
+        <p style="color:var(--slate-500);line-height:1.85;margin-bottom:20px;font-size:0.95rem;">Nautilus Code operates out of Colombo, Sri Lanka — a growing technology hub with exceptional engineering talent, competitive rates, and a time zone that lets us serve both Asian and European markets effectively.</p>
+        <p style="color:var(--slate-500);line-height:1.85;margin-bottom:32px;font-size:0.95rem;">We are a fully remote-first team. This isn't a compromise — it's a deliberate structure that lets us hire the best engineers regardless of location, and deliver to clients anywhere in the world without the overhead of a physical office.</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="padding:20px;background:var(--slate-50);border-radius:14px;border:1px solid var(--slate-100);">
+            <!-- <div style="font-size:1.4rem;margin-bottom:8px;">🇱🇰</div> -->
+            <p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Colombo, Sri Lanka</p>
+            <p style="font-size:0.78rem;color:var(--slate-400);">UTC+5:30 · IST</p>
+          </div>
+          <div style="padding:20px;background:var(--slate-50);border-radius:14px;border:1px solid var(--slate-100);">
+            <!-- <div style="font-size:1.4rem;margin-bottom:8px;">🌍</div> -->
+            <p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Serving Globally</p>
+            <p style="font-size:0.78rem;color:var(--slate-400);">Asia · Europe · Middle East</p>
+          </div>
+          <div style="padding:20px;background:var(--slate-50);border-radius:14px;border:1px solid var(--slate-100);">
+            <!-- <div style="font-size:1.4rem;margin-bottom:8px;">💬</div> -->
+            <p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Remote-First Culture</p>
+            <p style="font-size:0.78rem;color:var(--slate-400);">Async-friendly · Zero micromanagement</p>
+          </div>
+          <div style="padding:20px;background:var(--slate-50);border-radius:14px;border:1px solid var(--slate-100);">
+            <!-- <div style="font-size:1.4rem;margin-bottom:8px;">⚡</div> -->
+            <p style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px;">Response in 24hrs</p>
+            <p style="font-size:0.78rem;color:var(--slate-400);">Business days · Any timezone</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Culture cards -->
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="background:var(--navy);border-radius:20px;padding:32px;">
+          <p style="font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:20px;">How We Work</p>
+          <div style="display:flex;flex-direction:column;gap:16px;">
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(37,99,235,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div><p style="font-weight:600;font-size:0.88rem;color:white;margin-bottom:3px;">Async Communication</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.5;">Detailed written updates over endless meetings. Your time is respected.</p></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(37,99,235,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div><p style="font-weight:600;font-size:0.88rem;color:white;margin-bottom:3px;">GitHub-Driven Delivery</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.5;">Every commit tracked. You can see progress in real time — no need to ask.</p></div>
+            </div>
+            <div style="display:flex;align-items:flex-start;gap:14px;">
+              <div style="width:36px;height:36px;background:rgba(37,99,235,0.2);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div><p style="font-weight:600;font-size:0.88rem;color:white;margin-bottom:3px;">Weekly Demo Sessions</p><p style="font-size:0.8rem;color:rgba(255,255,255,0.4);line-height:1.5;">Every Friday, a live demo of what was built that week. No surprises at launch.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--electric-pale);border:1px solid rgba(37,99,235,0.15);border-radius:16px;padding:24px;">
+          <p style="font-weight:700;font-size:0.95rem;color:var(--navy);margin-bottom:8px;">Currently accepting new clients</p>
+          <p style="font-size:0.85rem;color:var(--slate-500);line-height:1.6;margin-bottom:16px;">We limit our active projects to ensure every client receives our full attention. Check current availability below.</p>
+          <div style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:white;border-radius:100px;border:1px solid rgba(37,99,235,0.15);">
+            <!-- <span style="width:8px;height:8px;border-radius:50%;background:#16a34a;display:block;animation:pulse 2s infinite;"></span>
+            <span style="font-size:0.8rem;font-weight:600;color:var(--navy);">2 slots open for Q3 2025</span> -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────────── -->
+<section style="background:var(--navy);padding:80px 0;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(37,99,235,0.2) 0%,transparent 70%);pointer-events:none;"></div>
+  <div style="max-width:800px;margin:0 auto;padding:0 2rem;text-align:center;">
+    <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:white;letter-spacing:-0.03em;margin-bottom:16px;">Ready to build something that actually works?</h2>
+    <p style="color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.75;margin-bottom:36px;">Let's talk about your business operations and how we can automate the expensive manual parts.</p>
+    <button class="btn-primary" style="background:white;color:var(--navy);font-size:1rem;padding:16px 32px;" onclick="navigateTo('contact')">Start a Conversation →</button>
+    <p style="font-size:0.8rem;color:rgba(255,255,255,0.25);margin-top:16px;">No commitment · NDA available · Response within 24 hours</p>
+  </div>
+</section>
+
+
+  </div>
+</div>
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
+  <a href="https://wa.me/94713441221" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <script src="config.local.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Nautilus Code</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="js/config.js"></script> <link rel="stylesheet" href="css/style.css">  <script src="js/main.js"></script>
+
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<div>
+  <div>
+    <!-- ============================================================
+     PORTFOLIO PAGE — pages/portfolio.html
+     Injected into index.html as:  <div id="page-portfolio" class="page">
+     ============================================================ -->
+
+<!-- ── PAGE HEADER ──────────────────────────────────────────── -->
+<section style="background:var(--slate-50);padding:80px 0 60px;border-bottom:1px solid var(--slate-100);padding-top:138px;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+    <span class="section-label">Selected Works</span>
+    <h1 class="section-title" style="font-size:clamp(2.2rem,4vw,3.2rem);margin-top:12px;max-width:580px;line-height:1.1;">Systems we've built. Results that speak.</h1>
+    <p class="section-desc" style="margin-top:16px;max-width:520px;">Every project here solved a real business problem — not a hypothetical one. These are production systems running live operations.</p>
+  </div>
+</section>
+
+<!-- ── PROJECTS GRID ─────────────────────────────────────────── -->
+<section style="padding:80px 0;background:white;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;" class="portfolio-grid">
+
+    <!-- Grid -->
+    <!-- <div style="display:grid;grid-template-columns:repeat(auto-fil,minmax(300px,1fr));gap:22px;" class="bento-grid"> -->
+
+      <!-- ── Card 01: Avion Farm ── -->
+      <div style="background:#fff;border:3px solid rgba(13,27,62,0.08);border-radius:5px;overflow:hidden;transition:box-shadow 0.25s,border-color 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(37,99,235,0.10)';this.style.borderColor='rgba(37,99,235,0.18)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(13,27,62,0.08)';this.style.transform='translateY(0)'">
+
+        <!-- Thumbnail — replace src with your screenshot -->
+        <div style="height:200px;overflow:hidden;position:relative;background:#0d1b3e;">
+          <img src="assets/avion.png" alt="Kantale Avion Farm Retreat" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <!-- Live badge -->
+          <div style="position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:6px;background:rgba(13,27,62,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 12px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#22c55e;display:inline-block;"></span>
+            <span style="font-size:0.68rem;font-weight:500;color:#fff;letter-spacing:0.04em;">Live</span>
+          </div>
+        </div>
+
+        <div style="padding:22px 24px 24px;">
+
+          <!-- Tags -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(37,99,235,0.07);color:#1d4ed8;border:1px solid rgba(37,99,235,0.14);">Eco-Tourism</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Web Site</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Figma → Code</span>
+          </div>
+
+          <!-- Title + URL -->
+          <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#0d1b3e;letter-spacing:-0.02em;line-height:1.2;margin-bottom:4px;">Kantale Avion Farm Retreat</p>
+          <p style="font-size:0.75rem;color:rgba(37,99,235,0.7);margin-bottom:12px;">avionfarm.com</p>
+
+          <!-- Description -->
+          <p style="font-size:0.82rem;color:rgba(13,27,62,0.5);line-height:1.65;margin-bottom:20px;">A full-stack marketing and booking platform for Sri Lanka's first eco-aviation hub — built for international visitors and local discovery alike.</p>
+
+          <!-- Stats row -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 0;border-top:1px solid rgba(13,27,62,0.06);border-bottom:1px solid rgba(13,27,62,0.06);margin-bottom:18px;">
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">99%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Lighthouse</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(13,27,62,0.06);border-right:1px solid rgba(13,27,62,0.06);">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">0.8s</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Load Time</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">100%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">On Time</div>
+            </div>
+          </div>
+
+          <!-- CTA row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <a href="https://avionfarm.com/" target="_blank" rel="noopener" style="font-size:0.82rem;font-weight:500;color:#2563eb;text-decoration:none;display:flex;align-items:center;gap:5px;">
+              Visit Live Site
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end;">
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">HTML</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">JavaScript</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Tailwind</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Card 02: Aura Studio ── -->
+      <div style="background:#fff;border:3px solid rgba(13,27,62,0.08);border-radius:5px;overflow:hidden;transition:box-shadow 0.25s,border-color 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(37,99,235,0.10)';this.style.borderColor='rgba(37,99,235,0.18)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(13,27,62,0.08)';this.style.transform='translateY(0)'">
+
+        <!-- Thumbnail — replace src with your screenshot -->
+        <div style="height:200px;overflow:hidden;position:relative;background:#0f3270;">
+          <img src="assets/aura.png" alt="Aura Studio E-Commerce" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <!-- Demo badge -->
+          <div style="position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:6px;background:rgba(13,27,62,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 12px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>
+            <span style="font-size:0.68rem;font-weight:500;color:#fff;letter-spacing:0.04em;">Demo</span>
+          </div>
+        </div>
+
+        <div style="padding:22px 24px 24px;">
+
+          <!-- Tags -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(37,99,235,0.07);color:#1d4ed8;border:1px solid rgba(37,99,235,0.14);">E-Commerce</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Headless</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Next.js</span>
+          </div>
+
+          <!-- Title + URL -->
+          <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#0d1b3e;letter-spacing:-0.02em;line-height:1.2;margin-bottom:4px;">Aura Studio — E-Commerce Site</p>
+          <p style="font-size:0.75rem;color:rgba(37,99,235,0.7);margin-bottom:12px;">aurastudio.com</p>
+
+          <!-- Description -->
+          <p style="font-size:0.82rem;color:rgba(13,27,62,0.5);line-height:1.65;margin-bottom:20px;">A high-performance digital storefront built with headless architecture — automating product catalog rendering and cutting operational overhead while scaling digital sales 24/7.</p>
+
+          <!-- Stats row -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 0;border-top:1px solid rgba(13,27,62,0.06);border-bottom:1px solid rgba(13,27,62,0.06);margin-bottom:18px;">
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">218%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Conversions</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(13,27,62,0.06);border-right:1px solid rgba(13,27,62,0.06);">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">40h</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Less Manual Work</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">35%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Less Overhead</div>
+            </div>
+          </div>
+
+          <!-- CTA row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <a href="http://aurastudio.com/" target="_blank" rel="noopener" style="font-size:0.82rem;font-weight:500;color:#2563eb;text-decoration:none;display:flex;align-items:center;gap:5px;">
+              Visit Demo Site
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end;">
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Next.js</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Tailwind</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Node.js</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ── Card 03: Aura E-Commerce ── -->
+      <div style="background:#fff;border:3px solid rgba(13,27,62,0.08);border-radius:5px;overflow:hidden;transition:box-shadow 0.25s,border-color 0.25s,transform 0.25s;" onmouseover="this.style.boxShadow='0 8px 32px rgba(37,99,235,0.10)';this.style.borderColor='rgba(37,99,235,0.18)';this.style.transform='translateY(-2px)'" onmouseout="this.style.boxShadow='';this.style.borderColor='rgba(13,27,62,0.08)';this.style.transform='translateY(0)'">
+
+        <!-- Thumbnail — replace src with your screenshot -->
+        <div style="height:200px;overflow:hidden;position:relative;background:#0f3270;">
+          <img src="assets/aura1.png" alt="Aura E-Commerce" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
+          <!-- Demo badge -->
+          <div style="position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:6px;background:rgba(13,27,62,0.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.1);border-radius:100px;padding:4px 12px;">
+            <span style="width:6px;height:6px;border-radius:50%;background:#f59e0b;display:inline-block;"></span>
+            <span style="font-size:0.68rem;font-weight:500;color:#fff;letter-spacing:0.04em;">Demo</span>
+          </div>
+        </div>
+
+        <div style="padding:22px 24px 24px;">
+
+          <!-- Tags -->
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(37,99,235,0.07);color:#1d4ed8;border:1px solid rgba(37,99,235,0.14);">E-Commerce</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Headless</span>
+            <span style="font-size:0.68rem;font-weight:500;padding:3px 10px;border-radius:100px;background:rgba(13,27,62,0.06);color:#374151;border:1px solid rgba(13,27,62,0.1);">Next.js</span>
+          </div>
+
+          <!-- Title + URL -->
+          <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:#0d1b3e;letter-spacing:-0.02em;line-height:1.2;margin-bottom:4px;">AURA — Premium E-Commerce Site</p>
+          <p style="font-size:0.75rem;color:rgba(37,99,235,0.7);margin-bottom:12px;">aura.com</p>
+
+          <!-- Description -->
+          <p style="font-size:0.82rem;color:rgba(13,27,62,0.5);line-height:1.65;margin-bottom:20px;">A premium, minimalist e-commerce ecosystem engineered for high-end retail and boutique brands.</p>
+
+          <!-- Stats row -->
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:16px 0;border-top:1px solid rgba(13,27,62,0.06);border-bottom:1px solid rgba(13,27,62,0.06);margin-bottom:18px;">
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">218%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Conversions</div>
+            </div>
+            <div style="text-align:center;border-left:1px solid rgba(13,27,62,0.06);border-right:1px solid rgba(13,27,62,0.06);">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">40h</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Less Manual Work</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:'Syne',sans-serif;font-size:1.15rem;font-weight:800;color:#2563eb;letter-spacing:-0.03em;">35%</div>
+              <div style="font-size:0.65rem;color:rgba(13,27,62,0.4);margin-top:2px;">Less Overhead</div>
+            </div>
+          </div>
+
+          <!-- CTA row -->
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <a href="http://aura.com/" target="_blank" rel="noopener" style="font-size:0.82rem;font-weight:500;color:#2563eb;text-decoration:none;display:flex;align-items:center;gap:5px;">
+              Visit Demo Site
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <div style="display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end;">
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Next.js</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Tailwind</span>
+              <span style="font-size:0.65rem;color:rgba(13,27,62,0.35);background:rgba(13,27,62,0.04);padding:2px 8px;border-radius:4px;">Node.js</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ── PROCESS CALLOUT ── -->
+  <div style="max-width:1200px;margin:60px auto 0;padding:0 2rem;">
+    <div style="background:var(--slate-50);border:1px solid var(--slate-100);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;" class="process-grid">
+      
+        <span class="section-label">Our Process</span>
+        <h3 style="font-family:'Syne',sans-serif;font-size:1.7rem;font-weight:800;color:var(--navy);letter-spacing:-0.03em;margin-top:10px;margin-bottom:14px;">Every project follows the Nautilus method.</h3>
+        <p style="color:var(--slate-500);line-height:1.7;margin-bottom:24px;">Discovery → Architecture → Development → QA → Launch → Post-launch monitoring. No shortcuts. No hidden phases. Full transparency at every stage.</p>
+        <button class="btn-primary" onclick="navigateTo('contact')">Start Your Project →</button>
+      
+      <!-- <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+        <div style="background:white;border:1px solid var(--slate-100);border-radius:12px;padding:20px;"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.05em;">10<span style="color:var(--electric);">+</span></div><div style="font-size:0.78rem;color:var(--slate-400);margin-top:4px;">Projects shipped</div></div>
+        <div style="background:white;border:1px solid var(--slate-100);border-radius:12px;padding:20px;"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.05em;">0</div><div style="font-size:0.78rem;color:var(--slate-400);margin-top:4px;">Missed deadlines</div></div>
+        <div style="background:white;border:1px solid var(--slate-100);border-radius:12px;padding:20px;"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.05em;">100<span style="color:var(--electric);">%</span></div><div style="font-size:0.78rem;color:var(--slate-400);margin-top:4px;">Code ownership to client</div></div>
+        <div style="background:white;border:1px solid var(--slate-100);border-radius:12px;padding:20px;"><div style="font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--navy);letter-spacing:-0.05em;">4.9<span style="color:var(--electric);">★</span></div><div style="font-size:0.78rem;color:var(--slate-400);margin-top:4px;">Avg. client rating</div></div>
+      </div> -->
+    
+  </div>
+</section>
+
+  </div>
+  
+</div>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+
+  <a href="https://wa.me/94713441221" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <script src="config.local.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

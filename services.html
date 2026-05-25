@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services — Nautilus Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' cdn.tailwindcss.com;
+    style-src 'self' 'unsafe-inline' fonts.googleapis.com;
+    font-src fonts.gstatic.com;
+    connect-src 'self' api.groq.com;
+    img-src 'self' data:;
+  ">
+</head>
+<body>
+
+<div id="navbar-placeholder"></div>
+
+<div>
+
+  <!-- ── PAGE HEADER ── -->
+<section style="
+  padding: 180px 0 60px;
+  position: relative;
+  overflow: hidden;
+  background-color: #0d1b3e;
+  background-size: cover;
+  background-image: url('assets/1.jpg');
+  background-position: center 20%;
+">
+
+  <!-- dark overlay — text readable වෙන්න -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      rgba(13,27,62,0.88) 0%,
+      rgba(13,27,62,0.72) 55%,
+      rgba(13,27,62,0.35) 100%
+    );
+  "></div>
+
+  <!-- content -->
+  <div style="max-width:1200px;margin:0 auto;padding:0 2rem;position:relative;z-index:2;">
+
+    <span style="
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(96,165,250,0.9);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    ">
+      <span style="display:block;width:22px;height:1.5px;background:rgba(96,165,250,0.9);border-radius:2px;"></span>
+      What We Build
+    </span>
+
+    <h1 style="
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      max-width: 700px;
+      margin-bottom: 20px;
+    ">
+      Systems that save time, cut costs, and
+      <span style="color:#60a5fa;">scale</span> your business.
+    </h1>
+
+    <p style="
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 560px;
+    ">
+      We don't just write code. We engineer business systems that
+      automate manual operations, reduce overhead by up to 40%,
+      and give you back hours of freedom every week.
+    </p>
+
+  </div>
+</section>
+
+  <!-- ── INDUSTRY FILTER TABS ── -->
+  <section style="background:white;border-bottom:1px solid var(--slate-100);position:sticky;top:80px;z-index:100;gap:3px;">
+    <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+      <div style="display:flex;gap:0;overflow-x:auto;scrollbar-width:none;" class="industry-tabs">
+        <button class="industry-tab active" data-industry="all" onclick="filterIndustry('all')">All Services</button>
+        <button class="industry-tab" data-industry="retail" onclick="filterIndustry('retail')">Retail & Commerce</button>
+        <button class="industry-tab" data-industry="tourism" onclick="filterIndustry('tourism')">Tourism & Hospitality</button>
+        <button class="industry-tab" data-industry="finance" onclick="filterIndustry('finance')">Finance & Fintech</button>
+        <button class="industry-tab" data-industry="health" onclick="filterIndustry('health')">Healthcare</button>
+        <button class="industry-tab" data-industry="education" onclick="filterIndustry('education')">Education</button>
+        <button class="industry-tab" data-industry="saas" onclick="filterIndustry('saas')">Startups & SaaS</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SERVICES GRID ── -->
+  <section style="padding:80px 0;background:var(--slate-50);">
+    <div style="max-width:1200px;margin:0 auto;padding:0 2rem;">
+
+      <!-- Category 4: Digital Sales Funnels -->
+      <div class="service-category" data-industries="retail,tourism,saas,all" style="margin-top:24px;">
+        <div class="category-header">
+          <!-- <div class="category-icon" style="background:#f0fdf4;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="#16a34a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div> -->
+          <div>
+            <h2 class="category-title">Digital Sales Funnels</h2>
+            <p class="category-desc">Turn visitors into paying customers — automatically. No big website needed.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="svc-card" data-industries="retail,tourism,all" onclick="openService('landing')">
+            <div class="svc-card-top">
+              <span class="svc-badge" style="background:#f0fdf4;color:#16a34a;">Fast Delivery</span>
+            </div>
+            <!-- <div class="svc-icon" style="background:#f0fdf4;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">High-Conversion Landing Pages</h3>
+            <p class="svc-desc">One product, one page, one goal — maximum conversions. Stripe/PayHere payments built-in.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">A/B Tested</span>
+              <span class="tag-pill">PayHere/Stripe</span>
+              <span class="tag-pill">Sub 1s Load</span>
+              <span class="tag-pill">SEO</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↑ 218%</span> conversion rate (avg)
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="retail,all" onclick="openService('ecommerce')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#eff6ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" stroke="#2563EB" stroke-width="1.8"/><path d="M3 6h18M16 10a4 4 0 01-8 0" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">E-Commerce Development</h3>
+            <p class="svc-desc">Full online store with payment gateways, order tracking, and inventory sync — sell while you sleep.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Product Catalog</span>
+              <span class="tag-pill">Order Management</span>
+              <span class="tag-pill">PayHere/Stripe</span>
+              <span class="tag-pill">SEO</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">24/7</span> automated sales
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="saas,all" onclick="openService('saas')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#fdf4ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" stroke="#9333ea" stroke-width="1.8"/></svg>
+            </div> -->
+            <h3 class="svc-title">SaaS Product Development</h3>
+            <p class="svc-desc">Turn your startup idea into a subscription-based product. Monthly recurring revenue from day one.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Subscription Model</span>
+              <span class="tag-pill">Multi-tenant</span>
+              <span class="tag-pill">API-first</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">MRR</span> from month 1
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category 2: AI & Smart Systems -->
+      <div class="service-category" data-industries="retail,tourism,finance,health,education,saas,all" style="margin-top:64px;">
+        <div class="category-header">
+          <!-- <div class="category-icon" style="background:#fdf4ff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="#9333ea" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round"/></svg>
+          </div> -->
+          <div>
+            <h2 class="category-title">AI & Smart Systems</h2>
+            <p class="category-desc">24/7 customer engagement without 24/7 staff. Let AI handle the repetitive conversations while you focus on growth.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="svc-card svc-card-featured" data-industries="retail,tourism,finance,all" onclick="openService('whatsapp')">
+            <div class="svc-card-top">
+              <span class="svc-badge" style="background:rgba(255,255,255,0.15);color:white;">🔥 High ROI</span>
+            </div>
+            <!-- <div class="svc-icon" style="background:rgba(255,255,255,0.1);">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div> -->
+            <h3 class="svc-title" style="color:white;">WhatsApp & Messenger Lead Bots</h3>
+            <p class="svc-desc" style="color:rgba(255,255,255,0.65);">Filter hot leads, collect contact info, and qualify prospects automatically — 24/7 without any staff.</p>
+            <div class="svc-tags">
+              <span class="tag-pill" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.1);">WhatsApp API</span>
+              <span class="tag-pill" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.1);">AI NLP</span>
+              <span class="tag-pill" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border-color:rgba(255,255,255,0.1);">CRM Integration</span>
+            </div>
+            <div class="svc-result" style="border-color:rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);">
+              <span style="color:#4ade80;font-weight:700;">↑ 3x</span> qualified leads per month
+            </div>
+            <div class="svc-learn" style="color:rgba(255,255,255,0.5);">Learn more →</div>
+          </div>
+
+          <div class="svc-card" data-industries="retail,tourism,health,education,all" onclick="openService('chatbot')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#eff6ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="14" rx="2" stroke="#2563EB" stroke-width="1.8"/><path d="M8 21h8M12 17v4M8 9h.01M12 9h.01M16 9h.01" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">24/7 AI Customer Support</h3>
+            <p class="svc-desc">AI that answers FAQs, handles complaints, and escalates complex issues to humans — instantly.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">GPT-4 Powered</span>
+              <span class="tag-pill">Multi-language</span>
+              <span class="tag-pill">Website + App</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↓ 60%</span> support ticket volume
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="saas,finance,all" onclick="openService('dashboard')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#fefce8;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18 20V10M12 20V4M6 20v-6" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">AI Analytics Dashboards</h3>
+            <p class="svc-desc">Real-time business intelligence with predictive insights. Know what's happening before it becomes a problem.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Real-time Data</span>
+              <span class="tag-pill">Predictive AI</span>
+              <span class="tag-pill">Custom KPIs</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↑ 40%</span> faster decision making
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+      
+      <!-- Category 3: ERP & Financial Systems -->
+      <div class="service-category" data-industries="retail,finance,health,education,all" style="margin-top:64px;">
+        <div class="category-header">
+          <!-- <div class="category-icon" style="background:#fefce8;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 100 7h5a3.5 3.5 0 110 7H6" stroke="#ca8a04" stroke-width="2" stroke-linecap="round"/></svg>
+          </div> -->
+          <div>
+            <h2 class="category-title">ERP & Financial Systems</h2>
+            <p class="category-desc">Know your exact profit, track every rupee, and eliminate financial leakage — all from one screen.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="svc-card" data-industries="retail,finance,all" onclick="openService('erp')">
+            <div class="svc-card-top">
+              <span class="svc-badge" style="background:#fefce8;color:#ca8a04;">Core Service</span>
+            </div>
+            <!-- <div class="svc-icon" style="background:#fefce8;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#ca8a04" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="#ca8a04" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Micro ERP & POS System</h3>
+            <p class="svc-desc">Complete business management — inventory, sales, staff, suppliers, and accounts — in one platform.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Multi-branch</span>
+              <span class="tag-pill">Offline-first POS</span>
+              <span class="tag-pill">Auto Ledger</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">6hr → 8min</span> daily reconciliation
+            </div>
+           
+          </div>
+
+          <div class="svc-card" data-industries="finance,retail,all" onclick="openService('pnl')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#f0fdf4;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 3v18h18" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round"/><path d="M7 16l4-4 4 4 4-4" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Real-time P&L Dashboard</h3>
+            <p class="svc-desc">See today's net profit, cash flow, and expenses — from your phone, in real time.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Live P&L</span>
+              <span class="tag-pill">Cash Flow</span>
+              <span class="tag-pill">Tax Reports</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">1-click</span> financial clarity
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="retail,health,education,all" onclick="openService('crm')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#eff6ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#2563EB" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">CRM & Customer Management</h3>
+            <p class="svc-desc">Track every customer interaction, purchase history, and communication — never lose a lead again.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Lead Pipeline</span>
+              <span class="tag-pill">Customer History</span>
+              <span class="tag-pill">Follow-up Alerts</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↑ 35%</span> customer retention
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category 1: Operations Automation -->
+      <div class="service-category" data-industries="retail,tourism,finance,health,education,saas,all" style="margin-top:64px;">
+        <div class="category-header">
+          <!-- <div class="category-icon" style="background:#eff6ff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div> -->
+          <div>
+            <h2 class="category-title">Operations Automation</h2>
+            <p class="category-desc">Stop paying people to do what software can do better. Automate repetitive tasks and reclaim hours every day.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <!-- Service Card -->
+          <div class="svc-card" data-industries="retail,finance,all" onclick="openService('invoicing')">
+            <div class="svc-card-top">
+              <span class="svc-badge" style="background:#eff6ff;color:#2563EB;">Most Popular</span>
+            </div>
+            <!-- <div class="svc-icon" style="background:#eff6ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="#2563EB" stroke-width="1.8"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="#2563EB" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Automated Invoicing & Follow-ups</h3>
+            <p class="svc-desc">Auto-send invoices and payment reminders via Email & WhatsApp. Zero manual chasing.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">WhatsApp API</span>
+              <span class="tag-pill">Email Automation</span>
+              <span class="tag-pill">PayHere</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↓ 80%</span> time spent on collections
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="retail,all" onclick="openService('stock')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#f0fdf4;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z" stroke="#16a34a" stroke-width="1.8"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" stroke="#16a34a" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Smart Stock & Procurement Automation</h3>
+            <p class="svc-desc">Auto-generate purchase orders when stock hits minimum levels. Never run out of products again.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Inventory System</span>
+              <span class="tag-pill">Auto PO</span>
+              <span class="tag-pill">Supplier Portal</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↓ 90%</span> stockout incidents
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="retail,tourism,health,education,all" onclick="openService('scheduling')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#fdf4ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="#9333ea" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Booking & Scheduling Systems</h3>
+            <p class="svc-desc">Online appointment booking with automated confirmations, reminders, and cancellation handling.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Online Booking</span>
+              <span class="tag-pill">SMS/WhatsApp</span>
+              <span class="tag-pill">Calendar Sync</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↓ 70%</span> no-shows
+            </div>
+          
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Category 5: UI/UX & Brand -->
+      <div class="service-category" data-industries="retail,tourism,saas,health,education,all" style="margin-top:64px;">
+        <div class="category-header">
+          <!-- <div class="category-icon" style="background:#fdf4ff;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="13.5" cy="6.5" r="2.5" stroke="#9333ea" stroke-width="1.8"/><circle cx="17.5" cy="10.5" r="2.5" stroke="#9333ea" stroke-width="1.8"/><circle cx="8.5" cy="7.5" r="2.5" stroke="#9333ea" stroke-width="1.8"/><circle cx="6.5" cy="12.5" r="2.5" stroke="#9333ea" stroke-width="1.8"/><path d="M12 22a7 7 0 007-7H5a7 7 0 007 7z" stroke="#9333ea" stroke-width="1.8"/></svg>
+          </div> -->
+          <div>
+            <h2 class="category-title">UI/UX Design & Brand Identity</h2>
+            <p class="category-desc">First impressions are everything. We design interfaces that build trust and convert visitors into customers.</p>
+          </div>
+        </div>
+
+        <div class="services-grid">
+
+          <div class="svc-card" data-industries="retail,tourism,saas,all" onclick="openService('uiux')">
+            <div class="svc-card-top"></div>
+            <!-- <div class="svc-icon" style="background:#fdf4ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="14" rx="2" stroke="#9333ea" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div> -->
+            <h3 class="svc-title">Figma UI/UX Design</h3>
+            <p class="svc-desc">High-fidelity prototypes before a single line of code. See exactly what you're getting first.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Figma Dev Mode</span>
+              <span class="tag-pill">Design System</span>
+              <span class="tag-pill">WCAG 2.2</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">1:1</span> design-to-code fidelity
+            </div>
+            
+          </div>
+
+          <div class="svc-card" data-industries="retail,tourism,all" onclick="openService('revamp')">
+            <div class="svc-card-top">
+              <span class="svc-badge" style="background:#fdf4ff;color:#9333ea;">Before/After</span>
+            </div>
+            <!-- <div class="svc-icon" style="background:#fdf4ff;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M23 7l-7 5 7 5V7z" stroke="#9333ea" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="5" width="15" height="14" rx="2" stroke="#9333ea" stroke-width="1.8"/></svg>
+            </div> -->
+            <h3 class="svc-title">Website Revamping</h3>
+            <p class="svc-desc">Transform your outdated 2015-era website into a modern, fast, conversion-ready experience.</p>
+            <div class="svc-tags">
+              <span class="tag-pill">Performance Audit</span>
+              <span class="tag-pill">Modern UI</span>
+              <span class="tag-pill">SEO Ready</span>
+            </div>
+            <div class="svc-result">
+              <span style="color:#16a34a;font-weight:700;">↑ 99</span> Lighthouse score
+            </div>
+           
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section style="background:var(--navy);padding:80px 0;position:relative;overflow:hidden;">
+    <div style="position:absolute;top:-40%;right:-10%;width:500px;height:500px;background:radial-gradient(circle,rgba(37,99,235,0.2) 0%,transparent 70%);pointer-events:none;"></div>
+    <div style="max-width:800px;margin:0 auto;padding:0 2rem;text-align:center;">
+      <h2 style="font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:white;letter-spacing:-0.03em;margin-bottom:16px;">Not sure which service fits your business?</h2>
+      <p style="color:rgba(255,255,255,0.5);font-size:1rem;line-height:1.75;margin-bottom:36px;">Book a free 30-minute discovery call. We'll map your exact operations and recommend the highest-ROI system for your business — no sales pitch, just clarity.</p>
+      <button class="btn-primary" style="background:white;color:var(--navy);font-size:1rem;padding:16px 32px;" onclick="navigateTo('contact')">Book Free Discovery Call →</button>
+      <p style="font-size:0.8rem;color:rgba(255,255,255,0.25);margin-top:16px;">No commitment required · Response within 24 hours</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- Service Detail Modal -->
+<div id="serviceModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(11,20,38,0.7);backdrop-filter:blur(8px);padding:2rem;" onclick="closeModal(event)">
+  <div id="modalContent" style="background:white;border-radius:24px;max-width:640px;width:100%;margin:auto;padding:48px;position:relative;max-height:90vh;overflow-y:auto;margin-top:5vh;">
+    <button onclick="closeServiceModal()" style="position:absolute;top:20px;right:20px;background:var(--slate-100);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<div id="footer-placeholder"></div>
+
+<script src="js/main.js"></script>
+
+<script>
+// ── INDUSTRY FILTER ───────────────────────────────────────────
+function filterIndustry(industry) {
+  // Update tabs
+  document.querySelectorAll('.industry-tab').forEach(tab => {
+    tab.classList.toggle('active', tab.dataset.industry === industry);
+  });
+
+  // Filter categories
+  document.querySelectorAll('.service-category').forEach(cat => {
+    const industries = cat.dataset.industries.split(',');
+    cat.style.display = (industry === 'all' || industries.includes(industry)) ? 'block' : 'none';
+  });
+
+  // Filter service cards
+  document.querySelectorAll('.svc-card').forEach(card => {
+    const industries = card.dataset.industries.split(',');
+    const show = industry === 'all' || industries.includes(industry);
+    card.style.opacity = show ? '1' : '0.3';
+    card.style.transform = show ? 'scale(1)' : 'scale(0.97)';
+    card.style.pointerEvents = show ? 'auto' : 'none';
+  });
+}
+
+// ── SERVICE MODAL ─────────────────────────────────────────────
+const serviceData = {
+  invoicing: {
+    title: 'Automated Invoicing & Follow-ups',
+    problem: 'Your staff spends hours calling clients for payments every week.',
+    solution: 'We build an automated system that sends invoices instantly, then follows up via WhatsApp and Email until payment is received — without any human intervention.',
+    features: ['Auto invoice generation on order completion', 'WhatsApp payment reminders (Day 1, 3, 7)', 'Email follow-up sequences', 'Payment confirmation & receipt sending', 'Overdue payment escalation alerts', 'PayHere / Stripe integration'],
+    result: '80% reduction in time spent on collections',
+    price: 'From LKR 50000',
+    timeline: '2–3 weeks'
+  },
+  stock: {
+    title: 'Smart Stock & Procurement Automation',
+    problem: 'Products run out unexpectedly, causing lost sales and unhappy customers.',
+    solution: 'We build an intelligent inventory system that monitors stock levels 24/7 and automatically generates purchase orders when levels drop below your set threshold.',
+    features: ['Real-time stock level monitoring', 'Auto Purchase Order generation', 'Supplier email notifications', 'Low stock alerts (SMS/WhatsApp)', 'Multi-location inventory sync', 'Reorder point customization per product'],
+    result: '90% reduction in stockout incidents',
+    price: 'From LKR 60000',
+    timeline: '3–4 weeks'
+  },
+  whatsapp: {
+    title: 'WhatsApp & Messenger Lead Bots',
+    problem: 'You\'re missing leads because you can\'t respond to messages 24/7.',
+    solution: 'An intelligent bot that instantly responds, qualifies leads by asking smart questions, captures their details, and notifies you only when a hot lead is ready to buy.',
+    features: ['Instant response to any message', 'Smart lead qualification questions', 'Contact info capture (name, phone, need)', 'Hot lead notification to your phone', 'Product/service FAQ automation', 'Handoff to human when needed'],
+    result: '3x more qualified leads per month',
+    price: 'From LKR 20000',
+    timeline: '1–2 weeks'
+  },
+  erp: {
+    title: 'Micro ERP & POS System',
+    problem: 'You\'re running your business across Excel sheets, WhatsApp messages, and paper receipts.',
+    solution: 'A complete business management platform — inventory, POS, staff management, supplier tracking, and automated accounting — all in one place.',
+    features: ['Multi-branch POS with offline capability', 'Real-time inventory management', 'Automated ledger & bookkeeping', 'Staff roles & permissions', 'Daily P&L reports', 'GST/VAT reporting', '30-day training & onboarding', 'Full source code ownership'],
+    result: 'Reconciliation time: 6 hours → 8 minutes',
+    price: 'From LKR 40000',
+    timeline: '8–10 weeks'
+  },
+  landing: {
+    title: 'High-Conversion Landing Pages',
+    problem: 'You\'re spending money on ads but your website isn\'t converting visitors into buyers.',
+    solution: 'A precision-engineered single-page funnel designed specifically for conversion — with integrated payments, social proof, and urgency elements.',
+    features: ['Conversion Rate Optimization (CRO)', 'Sub 1-second load time', 'PayHere / Stripe payment integration', 'Mobile-first responsive design', 'A/B testing framework setup', 'Analytics & heatmap integration', '99+ Lighthouse performance score'],
+    result: '218% average conversion rate improvement',
+    price: 'From LKR 25000',
+    timeline: '1–2 weeks'
+  },
+  chatbot: {
+    title: '24/7 AI Customer Support',
+    problem: 'Customers message you at 2am and leave when they don\'t get an answer.',
+    solution: 'An AI-powered support system trained on your business data that answers questions, handles complaints, and escalates complex issues to your team — instantly.',
+    features: ['GPT-4 powered responses', 'Trained on your business FAQs', 'Multi-language support (Sinhala, English)', 'Website chat widget integration', 'Escalation to human agent', 'Conversation history & analytics'],
+    result: '60% reduction in support ticket volume',
+    price: 'From LKR 40000',
+    timeline: '2–3 weeks'
+  }
+};
+
+function openService(id) {
+  const data = serviceData[id];
+  if (!data) return;
+
+  document.getElementById('modalBody').innerHTML = `
+    
+    <h2 style="font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--navy);letter-spacing:-0.03em;margin-bottom:16px;">${data.title}</h2>
+    
+    <div style="background:#fff7ed;border:1px solid rgba(234,88,12,0.2);border-radius:12px;padding:16px;margin-bottom:20px;">
+      <p style="font-size:0.8rem;font-weight:600;color:#ea580c;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">The Problem</p>
+      <p style="font-size:0.9rem;color:#7c2d12;line-height:1.6;">${data.problem}</p>
+    </div>
+    
+    <div style="background:#f0fdf4;border:1px solid rgba(22,163,74,0.2);border-radius:12px;padding:16px;margin-bottom:24px;">
+      <p style="font-size:0.8rem;font-weight:600;color:#16a34a;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;">Our Solution</p>
+      <p style="font-size:0.9rem;color:#166534;line-height:1.6;">${data.solution}</p>
+    </div>
+
+    <p style="font-size:0.75rem;font-weight:600;color:var(--slate-400);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">What's Included</p>
+    <ul style="display:grid;gap:8px;margin-bottom:24px;">
+      ${data.features.map(f => `
+        <li style="display:flex;align-items:center;gap:10px;font-size:0.88rem;color:var(--slate-600);">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" fill="#eff6ff"/><path d="M5 8l2 2 4-4" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/></svg>
+          ${f}
+        </li>
+      `).join('')}
+    </ul>
+
+    <div style="background:var(--navy);border-radius:12px;padding:20px;display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:wrap;gap:12px;">
+      <div><p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:4px;">RESULT</p><p style="font-weight:700;color:#4ade80;font-size:0.95rem;">${data.result}</p></div>
+      <div style="text-align:right;"><p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:4px;">STARTING FROM</p><p style="font-weight:800;color:white;font-family:'Syne',sans-serif;font-size:1.1rem;">${data.price}</p></div>
+      <div style="text-align:right;"><p style="font-size:0.72rem;color:rgba(255,255,255,0.4);margin-bottom:4px;">DELIVERY</p><p style="font-weight:600;color:white;font-size:0.9rem;">${data.timeline}</p></div>
+    </div>
+
+    <button class="btn-primary" style="width:100%;justify-content:center;padding:15px;font-size:0.95rem;" onclick="closeServiceModal();navigateTo('contact')">Get Started with This Service →</button>
+  `;
+
+  document.getElementById('serviceModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('serviceModal')) closeServiceModal();
+}
+
+function closeServiceModal() {
+  document.getElementById('serviceModal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+</script>
+
+<a href="https://wa.me/94713441221" class="whatsapp-float" target="_blank" rel="noopener" title="Chat on WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" fill="white"/>
+      <path d="M12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.985-1.407A9.953 9.953 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+
+  <script src="config.local.js"></script>
+  <script src="ai-assistant.js"></script>
+</body>
+</html>

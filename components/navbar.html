@@ -1,0 +1,39 @@
+<header class="navbar-header" id="navbar">
+  <nav class="navbar-inner">
+
+    <!-- Logo -->
+    <a class="nav-logo" onclick="navigateTo('home')" style="cursor:pointer;">
+      <img src="./assets/logo.png" alt="Nautilus Code" style="height:32px;width:auto;">
+    </a>
+
+    <!-- Nav Links (Desktop) -->
+    <div class="nav-links">
+      <span class="nav-link active" data-page="home" onclick="navigateTo('home')">Home</span>
+      <span class="nav-link" data-page="services" onclick="navigateTo('services')">Services</span>
+      <span class="nav-link" data-page="portfolio" onclick="navigateTo('portfolio')">Work</span>
+      <span class="nav-link" data-page="about" onclick="navigateTo('about')">About</span>
+    </div>
+
+    <!-- Right: Call + CTA -->
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button class="btn-cta" onclick="navigateTo('contact')">Let's Talk</button>
+    </div>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="hamburger" id="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </nav>
+</header>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-nav-link" data-page="home" onclick="navigateTo('home')">Home</span>
+  <span class="mobile-nav-link" data-page="services" onclick="navigateTo('services')">Services</span>
+  <span class="mobile-nav-link" data-page="portfolio" onclick="navigateTo('portfolio')">Work</span>
+  <span class="mobile-nav-link" data-page="about" onclick="navigateTo('about')">About</span>
+  <button class="btn-primary" style="margin-top:12px;width:100%;justify-content:center;" onclick="navigateTo('contact')">Let's Talk →</button>
+</div>

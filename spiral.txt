@@ -1,0 +1,33 @@
+<div class="nautilus-container" style="animation: fadeIn 1s ease forwards 0.3s;opacity:0;">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:480px;">
+              <defs>
+                <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%"><stop offset="0%" style="stop-color:#eff6ff;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#ffffff;stop-opacity:0"/></radialGradient>
+                <filter id="glow"><feGaussianBlur stdDeviation="3" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <linearGradient id="spiralGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#2563EB;stop-opacity:0.2"/><stop offset="50%" style="stop-color:#2563EB;stop-opacity:0.8"/><stop offset="100%" style="stop-color:#1a4a8f;stop-opacity:0.5"/></linearGradient>
+              </defs>
+              <circle cx="250" cy="250" r="220" fill="url(#bgGrad)" stroke="#e2e8f0" stroke-width="1"/>
+              <g class="nautilus-rings" style="transform-origin:250px 250px">
+                <circle cx="250" cy="250" r="200" fill="none" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="4 8"/>
+                <circle cx="250" cy="250" r="160" fill="none" stroke="#e2e8f0" stroke-width="0.8" stroke-dasharray="3 6"/>
+                <circle cx="250" cy="250" r="120" fill="none" stroke="rgba(37,99,235,0.15)" stroke-width="0.8" stroke-dasharray="2 5"/>
+                <circle cx="250" cy="250" r="80"  fill="none" stroke="rgba(37,99,235,0.2)" stroke-width="0.8" stroke-dasharray="2 4"/>
+              </g>
+              <g opacity="0.5">
+                <rect x="142" y="142" width="216" height="216" fill="none" stroke="rgba(37,99,235,0.12)" stroke-width="1"/>
+                <rect x="142" y="142" width="133" height="133" fill="none" stroke="rgba(37,99,235,0.10)" stroke-width="1"/>
+                <rect x="142" y="275" width="133" height="83" fill="none" stroke="rgba(37,99,235,0.08)" stroke-width="1"/>
+                <rect x="275" y="193" width="83" height="83" fill="none" stroke="rgba(37,99,235,0.08)" stroke-width="1"/>
+                <rect x="275" y="142" width="83" height="51" fill="none" stroke="rgba(37,99,235,0.06)" stroke-width="1"/>
+              </g>
+              <g class="nautilus-core" style="transform-origin:250px 250px">
+                <path d="M250 250 C250 218, 282 202, 306 218 C334 236, 338 272, 318 296 C294 324, 252 328, 220 310 C182 288, 170 242, 184 206 C202 162, 250 146, 290 156 C340 170, 362 218, 356 264 C348 320, 304 356, 250 362 C188 370, 136 328, 124 270 C110 200, 152 138, 216 118 C290 94, 364 134, 388 202" fill="none" stroke="url(#spiralGrad)" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+              </g>
+              <g fill="rgba(37,99,235,0.3)">
+                <circle cx="250" cy="250" r="4"/><circle cx="275" cy="225" r="2.5"/><circle cx="225" cy="275" r="2.5"/><circle cx="300" cy="200" r="2"/><circle cx="200" cy="300" r="2"/>
+              </g>
+              <text x="60"  y="50"  font-family="DM Sans" font-size="9" fill="#94a3b8">φ = 1.618</text>
+              <text x="380" y="480" font-family="DM Sans" font-size="9" fill="#94a3b8">∞ Scale</text>
+              <line x1="250" y1="30"  x2="250" y2="470" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4 6"/>
+              <line x1="30"  y1="250" x2="470" y2="250" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="4 6"/>
+            </svg>
+          </div>
